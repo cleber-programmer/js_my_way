@@ -5,7 +5,7 @@
     var oneOff;
 
     beforeEach(function () {
-
+      oneOff = {};
     });
 
     it('cria um modulo', function () {
