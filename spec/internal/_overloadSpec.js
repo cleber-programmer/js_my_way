@@ -18,8 +18,10 @@
         return a + b + c;
       });
 
+      expect(oneOff.add(1)).toEqual(NaN);
       expect(oneOff.add(1, 2)).toEqual(3);
       expect(oneOff.add(1, 2, 3)).toEqual(6);
+      expect(oneOff.add(1, 2, 3, 4)).toEqual(3);
 
     });
 
