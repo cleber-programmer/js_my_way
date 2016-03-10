@@ -15,7 +15,7 @@
     it('executa o modulo add', function () {
 
       context.$(['add'], function (add) {
-        expect(add(1, 2)).toEqual(2);
+        expect(add(1, 2)).toEqual(3);
       });
 
     });
