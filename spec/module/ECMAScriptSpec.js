@@ -2,13 +2,15 @@
 
   describe('ECMAScript', function () {
 
-    var oneOff;
+    describe('Object', function () {
 
-    beforeEach(function () {
-      oneOff = {};
-    });
+      it('a funcao assign foi definida', function () {
 
-    it('', function () {
+        context.$(['assign'], function (assign) {
+          expect(assign).toBeDefined();
+        });
+
+      });
 
     });
 
