@@ -1,7 +1,7 @@
 (function () {
   
   function solve(a, b) {
-    return (_contains(b, a) && a.push(b)), a;
+    return (_contains(a, b) && a.push(b)), a;
   }
   
   this._uniq = function (a) {
