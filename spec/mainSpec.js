@@ -1,14 +1,8 @@
 (function (context) {
 
   describe('main.js', function () {
-
-    var oneOff;
-
-    beforeEach(function () {
-      oneOff = {};
-    });
-
-    it('cria um modulo', function () {
+    
+    it('cria um modulo chamado add', function () {
 
       context.$('add', [], function () {
         return function (a, b) {
@@ -16,19 +10,27 @@
         };
       });
 
+    });
+
+    it('executa o modulo add', function () {
+
       context.$(['add'], function (add) {
         expect(add(1, 2)).toEqual(2);
       });
 
     });
 
-    it('cria um modulo com dependencia', function () {
+    it('cria um modulo chamado hello com dependencia do modulo add', function () {
 
       context.$('hello', ['add'], function (add) {
         return function (a) {
           return add('hello ', a);
         };
       });
+
+    });
+
+    it('executa o modulo hello', function () {
 
       context.$(['hello'], function (hello) {
         expect(hello('cleber.programmer')).toEqual('hello cleber.programmer');
