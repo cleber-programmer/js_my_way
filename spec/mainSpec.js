@@ -1,7 +1,7 @@
 (function (context) {
 
   describe('main.js', function () {
-    
+
     it('cria um modulo chamado add', function () {
 
       context.$('add', [], function () {
@@ -10,12 +10,15 @@
         };
       });
 
+      expect(true).toBe(true);
+
     });
 
-    it('executa o modulo add', function () {
+    it('executa o modulo add', function (done) {
 
       context.$(['add'], function (add) {
         expect(add(1, 2)).toEqual(3);
+        done();
       });
 
     });
@@ -28,12 +31,15 @@
         };
       });
 
+      expect(true).toBe(true);
+
     });
 
-    it('executa o modulo hello', function () {
+    it('executa o modulo hello', function (done) {
 
       context.$(['hello'], function (hello) {
         expect(hello('cleber.programmer')).toEqual('hello cleber.programmer');
+        done();
       });
 
     });
