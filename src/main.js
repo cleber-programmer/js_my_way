@@ -1,4 +1,4 @@
-(function (cache, components, modules) {
+(function (cache, context, components, modules) {
 
   function build(a, b) {
     return { 'callback': b, 'dependencies': a };
@@ -16,16 +16,22 @@
     return a.callback.apply(a, a.dependencies.map(inject));
   }
   
-  _overload(this, '$', function (a, b) {
+  context._overload(this, '$', function (a, b) {
     modules.push(build(a, b));
   });
   
-  _overload(this, '$', function (a, b, c) {
+  context._overload(this, '$', function (a, b, c) {
     Object.defineProperty(components, a, { value: build(b, c) });
   });
   
   window.addEventListener('load', function () {
+
+    context._overload(this, '$', function (a, b) {
+      mapper(build(a, b));
+    });
+
     modules.forEach(mapper);
+
   });
 
-}).call(this, {}, {}, []);
+})({}, this, {}, []);
