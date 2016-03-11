@@ -4,13 +4,16 @@
 
     describe('Object', function () {
 
-      it('a funcao assign foi definida', function () {
+      // it('funcao assign foi definida', function (done) {
 
-        context.$(['assign'], function (assign) {
-          expect(assign).toBeDefined();
-        });
+      //   context.$(['assign'], function (assign) {
 
-      });
+      //     expect(assign({}, { a: 0 })).toEqual({ a: 0 });
+      //     done();
+
+      //   });
+
+      // });
 
     });
 
