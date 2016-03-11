@@ -1,6 +1,6 @@
 (function (context) {
 
-  this.$('contains', [], function () {
+  context.$('contains', [], function () {
     return context._contains;
   });
 
