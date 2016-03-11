@@ -1,11 +1,11 @@
-(function () {
+(function (context) {
   
   function build(a) {
     (function (x) {
 
-      $(x, [], function () {
+      context.$(x, [], function () {
         return function (a) {
-          return a[x].apply(a, [].slice(arguments, 1));
+          return a[x].apply(a, [].slice.call(arguments, 1));
         }
       });
 
@@ -20,6 +20,6 @@
     return (typeof a[c] == 'function' && b.push(c)), b;
   }
 
-  _uniq([Object, Object.prototype, Array, Array.prototype, Number, Number.prototype, String, String.prototype].reduce(mapper, [])).forEach(build);
+  context._uniq([Object, Object.prototype, Array, Array.prototype, Number, Number.prototype, String, String.prototype].reduce(mapper, [])).forEach(build);
 
 })(this);
