@@ -1,2 +1,2 @@
-# JavaScript my way
+# REX
 JavaScript is like a blank sheet - "Freedom to program the way that makes sense to you!"
