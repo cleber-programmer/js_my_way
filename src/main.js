@@ -1,33 +1,33 @@
 (function (cache, context, components, modules) {
 
-  function build(a, b) {
-    return { 'callback': b, 'dependencies': a };
+  function build(dependencies, callback) {
+    return { 'callback': callback, 'dependencies': dependencies };
   }
   
-  function error(a) {
-    throw new ReferenceError('The ' + a + ' module is not defined');
+  function error(name) {
+    throw new ReferenceError('The ' + name + ' module is not defined');
   }
   
-  function inject(a) {
-    return cache[a] || (cache[a] = mapper(components[a] || error(a)));
+  function inject(name) {
+    return cache[name] || (cache[name] = mapper(components[name] || error(name)));
   }
   
-  function mapper(a) {
-    return a.callback.apply(a, a.dependencies.map(inject));
+  function mapper(module) {
+    return module.callback.apply(null, module.dependencies.map(inject));
   }
   
-  context._overload(this, '$', function (a, b) {
-    modules.push(build(a, b));
+  context._overload(this, '$', function (dependencies, callback) {
+    modules.push(build(dependencies, callback));
   });
   
-  context._overload(this, '$', function (a, b, c) {
-    Object.defineProperty(components, a, { value: build(b, c) });
+  context._overload(this, '$', function (name, dependencies, callback) {
+    Object.defineProperty(components, name, { value: build(dependencies, callback) });
   });
   
   window.addEventListener('load', function () {
 
-    context._overload(this, '$', function (a, b) {
-      mapper(build(a, b));
+    context._overload(this, '$', function (dependencies, callback) {
+      mapper(build(dependencies, callback));
     });
 
     modules.forEach(mapper);

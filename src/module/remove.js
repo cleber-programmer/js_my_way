@@ -1,11 +1,11 @@
 this.$('remove', [], function () {
 
-  function solve(a, b, c) {
-    return ((a != c) && b.push(c)), b;
+  function solve(predicate, previous, item) {
+    return ((predicate != item) && previous.push(item)), previous;
   }
 
-  return function (a, b) {
-    return a.reduce(solve.bind(null, b), []);
+  return function (array, item) {
+    return array.reduce(solve.bind(null, item), []);
   }
 
 });

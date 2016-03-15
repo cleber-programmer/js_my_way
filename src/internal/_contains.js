@@ -1,3 +1,3 @@
-this._contains = function (a, b) {
-  return !(a.indexOf(b) == -1);
+this._contains = function (array, item) {
+  return !(array.indexOf(item) == -1);
 };

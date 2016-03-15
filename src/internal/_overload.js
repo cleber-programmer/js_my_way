@@ -1,9 +1,9 @@
-this._overload = function (a, b, c) {
+this._overload = function (object, name, callback) {
 
-  (function (x) {
-    a[b] = function () {
-      return (c.length == arguments.length ? c : (x || c)).apply(null, arguments);
+  (function (method) {
+    object[name] = function () {
+      return (callback.length == arguments.length ? callback : (method || callback)).apply(null, arguments);
     };
-  })(a[b]);
+  })(object[name]);
 
 };

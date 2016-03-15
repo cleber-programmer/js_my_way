@@ -2,28 +2,28 @@
 
   context.$(['remove'], function (remove) {
 
-    function clear(a) {
-      return ['assign'].reduce(remove, a);
+    function clear(array) {
+      return ['assign'].reduce(remove, array);
     }
     
-    function build(a) {
-      (function (x) {
+    function build(item) {
+      (function (method) {
 
-        context.$(x, [], function () {
-          return function (a) {
-            return a[x].apply(a, [].slice.call(arguments, 1));
+        context.$(method, [], function () {
+          return function (object) {
+            return object[method].apply(object, [].slice.call(arguments, 1));
           }
         });
 
-      })(a);
+      })(item);
     }
     
-    function mapper(a, b) {
-      return a.concat(Object.getOwnPropertyNames(b).reduce(solve.bind(null, b), []));
+    function mapper(previous, item) {
+      return previous.concat(Object.getOwnPropertyNames(item).reduce(solve.bind(null, item), []));
     }
     
-    function solve(a, b, c) {
-      return (typeof a[c] == 'function' && b.push(c)), b;
+    function solve(predicate, previous, item) {
+      return (typeof predicate[item] == 'function' && previous.push(item)), previous;
     }
 
     clear(context._uniq([Object, Object.prototype, Array, Array.prototype, Number, Number.prototype, String, String.prototype].reduce(mapper, []))).forEach(build);

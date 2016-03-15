@@ -1,11 +1,11 @@
-(function () {
+(function (context) {
   
-  function solve(a, b) {
-    return !_contains(a, b) && a.push(b), a;
+  function solve(previous, item) {
+    return !_contains(previous, item) && previous.push(item), previous;
   }
   
-  this._uniq = function (a) {
-    return a.reduce(solve, []);
+  context._uniq = function (array) {
+    return array.reduce(solve, []);
   };
   
-}).call(this);
+})(this);
