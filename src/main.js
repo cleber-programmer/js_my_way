@@ -16,17 +16,17 @@
     return module.callback.apply(null, module.dependencies.map(inject));
   }
   
-  context._overload(this, '$', function (dependencies, callback) {
+  context._overload(this, 'Rex', function (dependencies, callback) {
     modules.push(build(dependencies, callback));
   });
   
-  context._overload(this, '$', function (name, dependencies, callback) {
+  context._overload(this, 'Rex', function (name, dependencies, callback) {
     Object.defineProperty(components, name, { value: build(dependencies, callback) });
   });
   
   window.addEventListener('load', function () {
 
-    context._overload(this, '$', function (dependencies, callback) {
+    context._overload(this, 'Rex', function (dependencies, callback) {
       mapper(build(dependencies, callback));
     });
 

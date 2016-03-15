@@ -1,6 +1,6 @@
 (function (context) {
 
-  context.$('contains', [], function () {
+  context.Rex('contains', [], function () {
     return context._contains;
   });
 

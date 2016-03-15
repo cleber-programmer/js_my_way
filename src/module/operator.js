@@ -3,7 +3,7 @@
   function build(item) {
     (function (name, operator) {
 
-      context.$(name, [], function () {
+      context.Rex(name, [], function () {
         return Function.apply(null, ['a', 'b'].concat('return a ' + operator + ' b'));
       });
 

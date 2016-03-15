@@ -4,7 +4,7 @@
 
     it('modulo _contains adicionado', function (done) {
 
-      context.$(['contains'], function (contains) {
+      context.Rex(['contains'], function (contains) {
 
         expect(contains).toBeDefined();
         done();
@@ -15,7 +15,7 @@
 
     it('verifica a existencia de um objeto', function (done) {
 
-      context.$(['contains'], function (contains) {
+      context.Rex(['contains'], function (contains) {
         
         var o1 = { a: 1, b: 2 };
         var o2 = { c: 3, d: 4 };
@@ -29,7 +29,7 @@
 
     it('verifica a nao existencia de um objeto', function (done) {
 
-      context.$(['contains'], function (contains) {
+      context.Rex(['contains'], function (contains) {
       
         var o1 = { a: 1, b: 2 };
         var o2 = { c: 3, d: 4 };
@@ -43,7 +43,7 @@
 
     it('verifica a existencia de um array', function (done) {
 
-      context.$(['contains'], function (contains) {
+      context.Rex(['contains'], function (contains) {
 
         var a1 = [1, 2];
         var a2 = [3, 4];
@@ -57,7 +57,7 @@
 
     it('verifica a nao existencia de um array', function (done) {
 
-      context.$(['contains'], function (contains) {
+      context.Rex(['contains'], function (contains) {
       
         var a1 = [1, 2];
         var a2 = [3, 4];
@@ -71,7 +71,7 @@
 
     it('verifica a existencia de um numero', function (done) {
 
-      context.$(['contains'], function (contains) {
+      context.Rex(['contains'], function (contains) {
 
         expect(contains([1, 2, 3], 1)).toEqual(true);
         done();
@@ -82,7 +82,7 @@
 
     it('verifica a nao existencia de um numero', function (done) {
 
-      context.$(['contains'], function (contains) {
+      context.Rex(['contains'], function (contains) {
 
         expect(contains([1, 2, 3], 0)).toEqual(false);
         done();
@@ -93,7 +93,7 @@
 
     it('verifica a existencia de um literal', function (done) {
 
-      context.$(['contains'], function (contains) {
+      context.Rex(['contains'], function (contains) {
 
         expect(contains(['orange', 'banana', 'apple'], 'apple')).toEqual(true);
         done();
@@ -104,7 +104,7 @@
 
     it('verifica a nao existencia de um literal', function (done) {
 
-      context.$(['contains'], function (contains) {
+      context.Rex(['contains'], function (contains) {
 
         expect(contains(['orange', 'banana', 'apple'], 'potato')).toEqual(false);
         done();

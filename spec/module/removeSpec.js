@@ -4,7 +4,7 @@
 
     it('removendo um objeto', function (done) {
 
-      context.$(['remove'], function (remove) {
+      context.Rex(['remove'], function (remove) {
 
         var o1 = { a: 0 };
         var o2 = { a: 1 };
@@ -18,7 +18,7 @@
 
     it('removendo um array', function (done) {
 
-      context.$(['remove'], function (remove) {
+      context.Rex(['remove'], function (remove) {
 
         var a1 = [0];
         var a2 = [1];
@@ -32,7 +32,7 @@
 
     it('removendo um numero', function (done) {
 
-      context.$(['remove'], function (remove) {
+      context.Rex(['remove'], function (remove) {
         expect(remove([1, 2, 3], 2)).toEqual([1, 3]);
         done();
       });
@@ -41,7 +41,7 @@
 
     it('removendo um literal', function (done) {
 
-      context.$(['remove'], function (remove) {
+      context.Rex(['remove'], function (remove) {
         expect(remove(['orange', 'banana', 'apple'], 'apple')).toEqual(['orange', 'banana']);
         done();
       });

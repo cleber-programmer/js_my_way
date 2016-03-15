@@ -1,6 +1,6 @@
 (function (context) {
 
-  context.$(['remove'], function (remove) {
+  context.Rex(['remove'], function (remove) {
 
     function clear(array) {
       return ['assign'].reduce(remove, array);

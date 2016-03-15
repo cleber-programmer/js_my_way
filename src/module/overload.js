@@ -1,6 +1,6 @@
 (function (context) {
 
-  context.$('overload', [], function () {
+  context.Rex('overload', [], function () {
     return context._overload;
   });
 

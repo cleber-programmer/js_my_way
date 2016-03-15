@@ -1,4 +1,4 @@
-this.$('remove', [], function () {
+this.Rex('remove', [], function () {
 
   function callback(predicate, previous, item) {
     return ((predicate != item) && previous.push(item)), previous;
