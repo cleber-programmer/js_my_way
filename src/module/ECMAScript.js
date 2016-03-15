@@ -26,7 +26,16 @@
       return (typeof predicate[item] == 'function' && previous.push(item)), previous;
     }
 
-    clear(context._uniq([Object, Object.prototype, Array, Array.prototype, Number, Number.prototype, String, String.prototype].reduce(mapper, []))).forEach(build);
+    clear(context._uniq([
+      Array,
+      Number,
+      Object,
+      String,
+      Array.prototype,
+      Number.prototype,
+      Object.prototype,
+      String.prototype
+    ].reduce(mapper, []))).forEach(build);
 
   });
 
