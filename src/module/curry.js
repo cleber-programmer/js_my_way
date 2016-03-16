@@ -18,24 +18,24 @@ this.Rex('curry', [
   }
   
   function mapper(template, next) {
-    return map(template, function (a) { return different(a, _) ? a : next(); });
+    return map(template, function (parameter) { return different(parameter, _) ? parameter : next(); });
   }
   
   function validate(parameters) {
     return every(parameters, partial(different, [_]));
   }
   
-  return function (a) {
+  return function (func) {
     
     function curry(template) {
       return solve(mapper(template, iterator(slice(arguments, 1))));
     }
     
     function solve(parameters) {
-      return validate(parameters) ? apply(a, parameters) : partial(curry, [parameters]);
+      return validate(parameters) ? apply(func, parameters) : partial(curry, [parameters]);
     }
     
-    return partial(curry, [sparse(a.length)]);
+    return partial(curry, [sparse(func.length)]);
     
   };
   
