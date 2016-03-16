@@ -1,7 +1,7 @@
 this.Rex('not', [], function () {
 
-  return function (value) {
-    return !value;
+  return function (a) {
+    return !a;
   };
 
 });

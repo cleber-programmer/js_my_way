@@ -1,40 +1,36 @@
 (function (context) {
 
-  context.Rex(['remove'], function (remove) {
+  function clear(array) {
+    return ['keys'].reduce(context._remove, array);
+  }
 
-    function clear(array) {
-      return ['keys'].reduce(remove, array);
-    }
+  function build(item) {
+    (function (name) {
 
-    function build(item) {
-      (function (name) {
+      context.Rex(name, [], function () {
+        return function (object) {
+          return object[name].apply(object, [].slice.call(arguments, 1));
+        }
+      });
 
-        context.Rex(name, [], function () {
-          return function (object) {
-            return object[name].apply(object, [].slice.call(arguments, 1));
-          }
-        });
+    })(item);
+  }
 
-      })(item);
-    }
+  function mapper(previous, item) {
+    return previous.concat(Object.getOwnPropertyNames(item).reduce(solve.bind(null, item), []));
+  }
 
-    function mapper(previous, item) {
-      return previous.concat(Object.getOwnPropertyNames(item).reduce(solve.bind(null, item), []));
-    }
+  function solve(predicate, previous, item) {
+    return (typeof predicate[item] == 'function' && previous.push(item)), previous;
+  }
 
-    function solve(predicate, previous, item) {
-      return (typeof predicate[item] == 'function' && previous.push(item)), previous;
-    }
+  clear(context._uniq([
 
-    clear(context._uniq([
-
-      Array.prototype,
-      Number.prototype,
-      Object.prototype,
-      String.prototype
-      
-    ].reduce(mapper, []))).forEach(build);
-
-  });
+    Array.prototype,
+    Number.prototype,
+    Object.prototype,
+    String.prototype
+    
+  ].reduce(mapper, []))).forEach(build);
 
 })(this);

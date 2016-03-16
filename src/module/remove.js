@@ -1,11 +1,7 @@
-this.Rex('remove', [], function () {
+(function (context) {
 
-  function callback(predicate, previous, item) {
-    return ((predicate != item) && previous.push(item)), previous;
-  }
+  context.Rex('remove', ['reduce'], function (reduce) {
+    return context._remove;
+  });
 
-  return function (array, item) {
-    return array.reduce(callback.bind(null, item), []);
-  }
-
-});
+})(this);
