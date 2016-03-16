@@ -4,4 +4,4 @@ this.Rex('not', [], function () {
     return !value;
   };
 
-}
+});

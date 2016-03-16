@@ -1,6 +1,21 @@
 (function (context) {
 
-  function build(item) {
+  [
+  
+    ['add',       '+'],
+    ['and',       '&&'],
+    ['divide',    '/'],
+    ['equal',     '=='],
+    ['gt',        '>'],
+    ['gte',       '>='],
+    ['lt',        '<'],
+    ['lte',       '<='],
+    ['mod',       '%'],
+    ['multiply',  '*'],
+    ['or',        '||'],
+    ['subtract',  '-']
+
+  ].forEach(function (item) {
     (function (name, operator) {
 
       context.Rex(name, [], function () {
@@ -8,22 +23,6 @@
       });
 
     }).apply(null, item);
-  }
-
-  [
-    ['add', '+'],
-    ['and', '&&'],
-    ['div', '/'],
-    ['equal', '=='],
-    ['gt', '>'],
-    ['gte', '>='],
-    ['lt', '<'],
-    ['lte', '<='],
-    ['mul', '*'],
-    ['or', '||'],
-    ['rem', '%'],
-    ['sub', '-']
-
-  ].forEach(build);
+  });
 
 })(this);

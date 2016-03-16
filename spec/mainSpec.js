@@ -2,18 +2,6 @@
 
   describe('main.js', function () {
 
-    it('cria um modulo chamado add', function () {
-
-      context.Rex('add', [], function () {
-        return function (a, b) {
-          return a + b;
-        };
-      });
-
-      expect(true).toBe(true);
-
-    });
-
     it('executa o modulo add', function (done) {
 
       context.Rex(['add'], function (add) {
