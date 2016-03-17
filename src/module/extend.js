@@ -1,19 +1,19 @@
 this.$('extend', [
 
+  'forEach',
   'get',
   'keys',
-  'reduce',
   'set'
 
-], function (get, keys, reduce, set) {
+], function (forEach, get, keys, set) {
 
-  return function (cloned, original) {
+  return function (extended, original) {
 
-    function callback(_, key) {
-      return set(cloned, key, get(original, key));
+    function callback(key) {
+     && set(extended, key, get(original, key));
     }
 
-    return reduce(keys(original), calback);
+    return forEach(keys(original), calback), extended;
 
   };
   
