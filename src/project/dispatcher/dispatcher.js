@@ -1,4 +1,4 @@
-this.$('dispatcher', [
+this.Rex('dispatcher', [
 
   'and',
   'equal',
