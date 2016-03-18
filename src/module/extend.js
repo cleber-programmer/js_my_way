@@ -1,20 +1,15 @@
-this.$('extend', [
+Rex('extend', [
 
-  'forEach',
-  'get',
+  'abacaxi',
+  'clone',
+  'curry',
   'keys',
-  'set'
+  'reduce'
 
-], function (forEach, get, keys, set) {
+], function (abacaxi, clone, curry, keys, reduce) {
 
   return function (extended, original) {
-
-    function callback(key) {
-     && set(extended, key, get(original, key));
-    }
-
-    return forEach(keys(original), calback), extended;
-
+    return reduce(keys(original), curry(abacaxi)(_, original, _), clone(extended));
   };
   
 });

@@ -1,4 +1,4 @@
-this.Rex('keys', [], function () {
+Rex('keys', [], function () {
 
   return function (a) {
     return Object.keys(a);

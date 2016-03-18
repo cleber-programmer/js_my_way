@@ -1,4 +1,4 @@
-this.Rex('$', [], function () {
+Rex('$', [], function () {
   
   return function (selector) {
     return document.querySelector(selector);

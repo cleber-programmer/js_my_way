@@ -1,3 +1,3 @@
-this.Rex('t', ['always'], function (always) {
+Rex('t', ['always'], function (always) {
   return always(!0);
 });

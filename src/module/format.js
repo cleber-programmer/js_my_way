@@ -1,4 +1,4 @@
-this.Rex('format', [
+Rex('format', [
   
   'or',
   'partial',

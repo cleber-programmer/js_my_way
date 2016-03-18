@@ -1,4 +1,4 @@
-this.Rex('curry', [
+Rex('curry', [
   
   'apply',
   'different',

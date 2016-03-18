@@ -1,3 +1,3 @@
-this.Rex('max', [], function () {
+Rex('max', [], function () {
   return Math.max;
 });

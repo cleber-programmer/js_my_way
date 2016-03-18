@@ -1,3 +1,3 @@
-this.Rex('_', [], function () {
-  return 'cleber.programmer';
+Rex('_', ['uid'], function (uid) {
+  return uid();
 });

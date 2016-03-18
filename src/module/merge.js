@@ -1,21 +1,13 @@
-this.$('merged', [
+Rex('merged', [
 
-  'forEach',
-  'get',
-  'hasOwnProperty',
+  'extend',
   'keys',
-  'set'
+  'pick'
 
-], function (forEach, get, has, keys, set) {
+], function (extend, keys, pick) {
 
   return function (merged, original) {
-
-    function callback(key) {
-      has(merged, key) && set(merged, key, get(original, key));
-    }
-
-    return forEach(keys(original), calback), merged;
-
+    return extend(merged, pick(keys(merged), original));
   };
   
 });

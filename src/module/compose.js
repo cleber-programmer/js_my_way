@@ -1,4 +1,4 @@
-this.Rex('compose', [
+Rex('compose', [
   
   'curry',
   'reduce',

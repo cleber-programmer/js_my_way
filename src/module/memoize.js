@@ -1,4 +1,4 @@
-this.Rex('memoize', [
+Rex('memoize', [
 
   'apply',
   'partial'

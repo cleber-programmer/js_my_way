@@ -1,4 +1,4 @@
-this.Rex('partial', [
+Rex('partial', [
   
   'apply',
   'concat',

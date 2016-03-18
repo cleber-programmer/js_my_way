@@ -1,4 +1,4 @@
-this.Rex('iterator', [
+Rex('iterator', [
 
   'add',
   'clone',

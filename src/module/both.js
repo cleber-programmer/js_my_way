@@ -1,4 +1,4 @@
-this.Rex('both', ['apply'], function (apply) {
+Rex('both', ['apply'], function (apply) {
   
   return function (func1, func2) {
     return function () {

@@ -1,4 +1,4 @@
-this.Rex('lambda', [
+Rex('lambda', [
 
   'apply',
   'concat',

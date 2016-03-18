@@ -1,4 +1,4 @@
-this.Rex('flip', [
+Rex('flip', [
   
   'apply',
   'reverse',

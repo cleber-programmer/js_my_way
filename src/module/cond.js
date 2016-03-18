@@ -1,4 +1,4 @@
-this.Rex('cond', [
+Rex('cond', [
 
   'apply',
   'partial',
