@@ -17,13 +17,13 @@ Rex('http', [
       };
       
       xhr.open(method, url, !0);
-      xhr.send(interceptor('request', JSON.stringify(or(data, '')), xhr));
+      xhr.send(interceptor('request', data, xhr));
 
       return function when(status, callback) {
         return set(listeners, status, callback), when;
       }
 
-    })({}, new XMLHttpRequest());    
+    })({}, new XMLHttpRequest());
   };
   
 });

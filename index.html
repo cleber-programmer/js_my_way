@@ -71,6 +71,11 @@
   <script src="src/project/h/vNode.js"></script>
   <script src="src/project/h/vText.js"></script>
 
+  <script src="src/project/http/http.js"></script>
+  <script src="src/project/http/interceptor.js"></script>
+  <script src="src/project/http/json.js"></script>
+  <script src="src/project/http/urlParameter.js"></script>
+
 </head>
 
 <body>
@@ -93,6 +98,29 @@
           h('p', ['Olá mundo JavaScript!'])
         ])
       );
+
+    });
+
+  </script>
+
+  <script type="text/javascript">
+    
+    Rex(['http'], function (http) {
+
+      function success(data) {
+        console.log(data);
+      }
+
+      function error() {
+        console.log('ERROR');
+      }
+
+      http(
+        'get',
+        'http://www.rex.com/api/'
+      )
+      (200, success)
+      (400, error);
 
     });
 
