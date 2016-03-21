@@ -2,17 +2,6 @@
 
   describe('contains', function () {
 
-    it('modulo _contains adicionado', function (done) {
-
-      context.Rex(['contains'], function (contains) {
-
-        expect(contains).toBeDefined();
-        done();
-        
-      });
-
-    });
-
     it('verifica a existencia de um objeto', function (done) {
 
       context.Rex(['contains'], function (contains) {
