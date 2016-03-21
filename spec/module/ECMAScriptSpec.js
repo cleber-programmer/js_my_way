@@ -1,13 +1,9 @@
-(function (context) {
+describe('ECMAScript', function () {
 
-  describe('ECMAScript', function () {
+  describe('Object', function () {
 
-    describe('Object', function () {
-
-      
-
-    });
+    
 
   });
 
-})(this);
+});
