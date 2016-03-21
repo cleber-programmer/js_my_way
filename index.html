@@ -2,16 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Jasmine Spec Runner v2.4.1</title>
+  <title>Rex v0.0.1</title>
 
-  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.4.1/jasmine_favicon.png">
-  <link rel="stylesheet" href="lib/jasmine-2.4.1/jasmine.css">
-
-  <script src="lib/jasmine-2.4.1/jasmine.js"></script>
-  <script src="lib/jasmine-2.4.1/jasmine-html.js"></script>
-  <script src="lib/jasmine-2.4.1/boot.js"></script>
-
-  <!-- include source files here... -->
   <script src="src/internal/_contains.js"></script>
   <script src="src/internal/_overload.js"></script>
   <script src="src/internal/_remove.js"></script>
@@ -79,15 +71,27 @@
   <script src="src/project/h/vNode.js"></script>
   <script src="src/project/h/vText.js"></script>
 
-  <!-- include spec files here... -->
-  <script src="spec/mainSpec.js"></script>  
-  <script src="spec/module/containsSpec.js"></script>
-  <script src="spec/module/ECMAScriptSpec.js"></script>
-  <script src="spec/module/overloadSpec.js"></script>
-  <script src="spec/module/removeSpec.js"></script>
-
 </head>
 
 <body>
+
+  <div id="rex"></div>
+
+  <script type="text/javascript">
+    
+    Rex([
+
+      'h',
+      'h.reflow',
+      '$'
+
+    ], function (h, reflow, $) {
+
+      reflow($('div#rex'), h('div#rex', ['Ola mundo JavaScript!']));
+
+    });
+
+  </script>
+
 </body>
 </html>

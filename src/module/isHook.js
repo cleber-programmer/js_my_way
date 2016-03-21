@@ -14,7 +14,7 @@
         return function (object) {
           return test(pattern, Object.prototype.toString.call(object));
         };
-      }
+      });
 
     }).apply(null, item);
   });

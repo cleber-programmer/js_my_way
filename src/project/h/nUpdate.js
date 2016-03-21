@@ -1,16 +1,14 @@
 Rex('h.nUpdate', [
 
   'cond',
-  'each',
   'extend',
   'get',
-  'keys',
   'or',
   'set',
   'h.isNode',
   'h.isText'
 
-], function (cond, each, extend, get, keys, or, set, isNode, isText) {
+], function (cond, extend, get, or, set, isNode, isText) {
   
   function solve(node, properties) {
     return extend(get(node, 'style'), or(get(properties, 'style'), {})), extend(get(node, 'dataset'), or(get(properties, 'dataset'), {})), extend(node, properties);

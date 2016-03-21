@@ -1,7 +1,7 @@
 (function (context) {
 
   function clear(array) {
-    return ['keys'].reduce(context._remove, array);
+    return ['keys', 'slice'].reduce(context._remove, array);
   }
 
   function build(item) {

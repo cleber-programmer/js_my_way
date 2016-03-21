@@ -1,4 +1,4 @@
-this.$('arity', ['apply'], function (apply) {
+Rex('arity', ['apply'], function (apply) {
   
   return function (number, func) {
     switch (number) {

@@ -5,20 +5,23 @@ Rex('curry', [
   'every',
   'map',
   'partial',
-  'shift',
   'slice',
   'sparse',
   'split',
   '_'
 
-], function (apply, different, every, map, partial, shift, slice, sparse, split, _) {
+], function (apply, different, every, map, partial, slice, sparse, split, _) {
   
   function iterator(args) {
-    return partial(shift, [args]);
+    return function () {
+      return args.shift();
+    }
   }
   
   function mapper(template, next) {
-    return map(template, function (parameter) { return different(parameter, _) ? parameter : next(); });
+    return map(template, function (parameter) {
+      return different(parameter, _) ? parameter : next();
+    });
   }
   
   function validate(parameters) {

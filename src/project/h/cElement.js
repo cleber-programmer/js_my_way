@@ -1,6 +1,5 @@
 Rex('h.cElement', [
   
-  'apply',
   'cond',
   'get',
   'reduce',
@@ -8,7 +7,7 @@ Rex('h.cElement', [
   'h.isText',
   'h.nUpdate'
   
-], function (apply, cond, get, reduce, isNode, isText, nUpdate) {
+], function (cond, get, reduce, isNode, isText, nUpdate) {
   
   function createChild(node, vDOM) {
     return node.appendChild(solve(vDOM)), node;
@@ -22,11 +21,11 @@ Rex('h.cElement', [
     return reduce(get(vDOM, 'childNodes'), createChild, nUpdate(document.createElement(get(vDOM, 'tag')), vDOM));
   }
 
-  function solve() {
-    return apply(cond([
+  function solve(vDOM) {
+    return cond([
       [isNode, createElement],
       [isText, createText]
-    ]), arguments);
+    ])(vDOM);
   }
   
   return solve;

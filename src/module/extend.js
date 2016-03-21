@@ -1,15 +1,15 @@
 Rex('extend', [
 
   'abacaxi',
-  'clone',
   'curry',
   'keys',
-  'reduce'
+  'reduce',
+  '_'
 
-], function (abacaxi, clone, curry, keys, reduce) {
+], function (abacaxi, curry, keys, reduce, _) {
 
   return function (extended, original) {
-    return reduce(keys(original), curry(abacaxi)(_, original, _), clone(extended));
+    return reduce(keys(original), curry(abacaxi)(_, original, _), extended);
   };
   
 });
