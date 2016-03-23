@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Rex example - event</title>
+</head>
+<body>
+
+  <div id="rex">
+  </div>
+
+  <script type="text/javascript" src="../dist/rex.min.js"></script>
+  <script type="text/javascript" src="../dist/rex-module.min.js"></script>
+  <script type="text/javascript" src="../dist/rex-h.min.js"></script>
+
+  <script type="text/javascript">
+
+    Rex([
+
+      'h',
+      'h.reflow',
+      '$'
+
+    ], function (h, reflow, $) {
+
+      reflow($('div#rex'), h('div#rex', [
+        h('a', {
+          href: '#',
+          onclick: function () {
+            alert('you are 1,000,000th visitor!');
+          }
+        },
+        'click here to win a prize')
+      ]));
+
+    });
+
+  </script>
+
+</body>
+</html>

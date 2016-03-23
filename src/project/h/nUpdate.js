@@ -2,16 +2,22 @@ Rex('h.nUpdate', [
 
   'cond',
   'extend',
+  'forEach',
   'get',
   'or',
+  'partial',
   'set',
   'h.isNode',
   'h.isText'
 
-], function (cond, extend, get, or, set, isNode, isText) {
+], function (cond, extend, forEach, get, or, partial, set, isNode, isText) {
+
+  function merge(node, properties, key) {
+    return extend(get(node, key), or(get(properties, key), {}));
+  }
   
   function solve(node, properties) {
-    return extend(get(node, 'style'), or(get(properties, 'style'), {})), extend(get(node, 'dataset'), or(get(properties, 'dataset'), {})), extend(node, properties);
+    return forEach(['style', 'dataset'], partial(merge, [node, properties])), extend(node, properties);
   }
   
   function updateNode(node, vDOM) {
