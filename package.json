@@ -1,0 +1,25 @@
+{
+  "name": "rex",
+  "version": "1.0.0",
+  "description": "JavaScript is like a blank sheet - 'Freedom to program the way that makes sense to you!'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cleber-programmer/rex.git"
+  },
+  "keywords": [
+    "Functional",
+    "Reactive",
+    "Programming",
+    "JavaScript"
+  ],
+  "author": "Cleber de Moraes Gonçalves",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cleber-programmer/rex/issues"
+  },
+  "homepage": "https://github.com/cleber-programmer/rex#readme"
+}
