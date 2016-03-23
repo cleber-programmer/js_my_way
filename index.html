@@ -84,46 +84,6 @@
   </div>
 
   <script type="text/javascript">
-    
-    Rex([
-
-      'h',
-      'h.reflow',
-      '$'
-
-    ], function (h, reflow, $) {
-
-      reflow($('div#rex'),
-        h('div#rex', [
-          h('p', ['Olá mundo JavaScript!'])
-        ])
-      );
-
-    });
-
-  </script>
-
-  <script type="text/javascript">
-    
-    Rex(['http'], function (http) {
-
-      function success(data) {
-        console.log(data);
-      }
-
-      function error() {
-        console.log('ERROR');
-      }
-
-      http(
-        'get',
-        'http://www.rex.com/api/'
-      )
-      (200, success)
-      (400, error);
-
-    });
-
   </script>
 
 </body>
