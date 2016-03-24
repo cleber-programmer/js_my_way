@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Rex example - route</title>
+</head>
+<body>
+
+  <div id="rex">
+  </div>
+
+  <main>
+  </main>
+
+  <script type="text/javascript" src="../dist/rex.min.js"></script>
+  <script type="text/javascript" src="../dist/rex-module.min.js"></script>
+  <script type="text/javascript" src="../dist/rex-h.min.js"></script>
+  <script type="text/javascript" src="../dist/rex-route.min.js"></script>
+
+  <script type="text/javascript">
+
+    Rex([
+
+      '$',
+      'h',
+      'h.reflow',
+      'route.pushState'
+
+    ], function ($, h, reflow, pushState) {
+
+      reflow($('div#rex'), h('div#rex', [
+        h('a', {
+          href: '#',
+          onclick: function () {
+            return void(pushState(null, null, '/home'));
+          }
+        },
+        'Home'),
+        h('a', {
+          href: '#',
+          onclick: function () {
+            return void(pushState(null, null, '/page/1'));
+          }
+        },
+        'Page 1')
+      ]));
+
+    });
+
+  </script>
+
+  <script type="text/javascript">
+
+    Rex([
+
+      '$',
+      'h',
+      'h.reflow',
+      'route'
+
+    ], function ($, h, reflow, route) {
+
+      route('/home', function (state, param) {
+
+        reflow($('main'), h('main', [
+          h('h1', 'Home')
+        ]));
+
+      });
+
+    });
+
+  </script>
+
+  <script type="text/javascript">
+
+    Rex([
+
+      '$',
+      'add',
+      'get',
+      'h',
+      'h.reflow',
+      'route'
+
+    ], function ($, add, get, h, reflow, route) {
+
+      route('/page/:id', function (state, param) {
+
+        reflow($('main'), h('main', [
+          h('h1', add('Pagina ', get(param, 'id', 0)))
+        ]));
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>

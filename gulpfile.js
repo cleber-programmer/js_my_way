@@ -22,7 +22,7 @@ gulp.task('module', function () {
 
 gulp.task('h', function () {
   
-  return gulp.src('./src/project/h/*.js')
+  return gulp.src('./src/package/h/*.js')
              .pipe(concat('rex-h.min.js'))
              .pipe(uglify())
              .pipe(gulp.dest('./dist/'));
@@ -31,11 +31,20 @@ gulp.task('h', function () {
 
 gulp.task('http', function () {
   
-  return gulp.src('./src/project/http/*.js')
+  return gulp.src('./src/package/http/*.js')
              .pipe(concat('rex-http.min.js'))
              .pipe(uglify())
              .pipe(gulp.dest('./dist/'));
   
 });
 
-gulp.task('default', ['main', 'module', 'h', 'http']);
+gulp.task('route', function () {
+  
+  return gulp.src('./src/package/route/*.js')
+             .pipe(concat('rex-route.min.js'))
+             .pipe(uglify())
+             .pipe(gulp.dest('./dist/'));
+  
+});
+
+gulp.task('default', ['main', 'module', 'h', 'http', 'route']);
