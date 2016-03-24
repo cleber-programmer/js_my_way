@@ -17,11 +17,11 @@
 
     Rex([
 
+      '$',
       'h',
-      'h.reflow',
-      '$'
+      'h.reflow'
 
-    ], function (h, reflow, $) {
+    ], function ($, h, reflow) {
 
       reflow($('div#rex'), h('div#rex', [
         h('h1', 'Hello!')
