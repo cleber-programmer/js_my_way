@@ -1,0 +1,26 @@
+{
+  "name": "rex",
+  "description": "JavaScript is like a blank sheet - 'Freedom to program the way that makes sense to you!'",
+  "main": "index.js",
+  "authors": [
+    "Cleber de Moraes Gonçalves"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Functional",
+    "Reactive",
+    "Programming",
+    "JavaScript"
+  ],
+  "homepage": "https://github.com/cleber-programmer/rex",
+  "moduleType": [
+    "globals"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
