@@ -7,12 +7,12 @@ Rex('h', [
 
 ], function (parseChild, parseProperty, parseTag, vNode) {
   
-  function solve(tag, property, children) {
-    return vNode(parseTag(tag, property), property, children);
+  function solve(tagName, property, children) {
+    return vNode(parseTag(tagName, property), property, children);
   }
   
-  return function (tag, property, children) {
-    return solve(tag, parseProperty(property), parseChild(children, property));
+  return function (tagName, property, children) {
+    return solve(tagName, parseProperty(property), parseChild(children, property));
   };
   
 });

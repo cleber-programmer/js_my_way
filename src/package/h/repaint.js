@@ -23,7 +23,7 @@ Rex('h.repaint', [
   }
   
   function exchange(node, vDOM) {
-    return different(get(node, 'nodeType'), get(vDOM, 'nodeType'));
+    return different(get(node, 'tagName'), get(vDOM, 'tagName'));
   }
   
   function insert(node, vDOM) {

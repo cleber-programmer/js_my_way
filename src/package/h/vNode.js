@@ -1,10 +1,10 @@
 Rex('h.vNode', [], function () {
   
-  return function vNode(tag, properties, children) {
+  return function vNode(tagName, properties, children) {
     
     return !(this instanceof vNode)
 
-    ? new vNode(tag, properties, children)
+    ? new vNode(tagName, properties, children)
     
     : {
       
@@ -20,8 +20,8 @@ Rex('h.vNode', [], function () {
         return properties;
       },
       
-      get tag() {
-        return tag;
+      get tagName() {
+        return tagName;
       }
       
     };

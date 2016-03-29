@@ -36,20 +36,20 @@ Rex('h.parseTag', [
     return trim(join(concat(split(get(property, 'className', ''), ' '), [sub(h)]), ' '));
   }
   
-  function solve(property, tag, h) {
-    return compose(partial(klass, [property]), partial(id, [property]))(h), testTag(tag, h);
+  function solve(property, tagName, h) {
+    return compose(partial(klass, [property]), partial(id, [property]))(h), testTag(tagName, h);
   }
   
   function sub(h) {
     return substring(h, 1, get(h, 'length'));
   }
   
-  function testTag(tag, h) {
-    return test(/^\.|#/, h) ? tag : or(h, tag);
+  function testTag(tagName, h) {
+    return test(/^\.|#/, h) ? tagName : or(h, tagName);
   }
   
-  return function (tag, property) {
-    return reduce(split(tag, /([\.#]?[a-zA-Z0-9\u007F-\uFFFF_:-]+)/), partial(solve, [or(property, {})]), 'div');
+  return function (tagName, property) {
+    return reduce(split(tagName, /([\.#]?[a-zA-Z0-9\u007F-\uFFFF_:-]+)/), partial(solve, [or(property, {})]), 'div');
   };
   
 });

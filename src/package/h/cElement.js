@@ -18,7 +18,7 @@ Rex('h.cElement', [
   }
   
   function createElement(vDOM) {
-    return reduce(get(vDOM, 'childNodes'), createChild, nUpdate(document.createElement(get(vDOM, 'tag')), vDOM));
+    return reduce(get(vDOM, 'childNodes'), createChild, nUpdate(document.createElement(get(vDOM, 'tagName')), vDOM));
   }
 
   function solve(vDOM) {
