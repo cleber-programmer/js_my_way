@@ -15,10 +15,11 @@ Rex('h.parseTag', [
   'split',
   'substring',
   'test',
+  'toUpperCase',
   'trim',
   '_'
 
-], function (both, charAt, compose, concat, curry, equal, get, join, or, partial, reduce, set, split, substring, test, trim, _) {
+], function (both, charAt, compose, concat, curry, equal, get, join, or, partial, reduce, set, split, substring, test, toUpperCase, trim, _) {
   
   function compare(value, char) {
     return equal(charAt(value, 0), char);
@@ -49,7 +50,7 @@ Rex('h.parseTag', [
   }
   
   return function (tagName, property) {
-    return reduce(split(tagName, /([\.#]?[a-zA-Z0-9\u007F-\uFFFF_:-]+)/), partial(solve, [or(property, {})]), 'div');
+    return toUpperCase(reduce(split(tagName, /([\.#]?[a-zA-Z0-9\u007F-\uFFFF_:-]+)/), partial(solve, [or(property, {})]), 'DIV'));
   };
   
 });
