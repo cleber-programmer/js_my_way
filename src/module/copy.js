@@ -1,4 +1,4 @@
-Rex('abacaxi', [
+Rex('copy', [
 
   'get',
   'set'
