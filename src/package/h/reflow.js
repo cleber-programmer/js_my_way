@@ -8,8 +8,8 @@ Rex('h.reflow', [
 
 ], function (forEach, get, max, sparse, repaint) {
 
-  function getChildren(a) {
-    return get(get(a, 'childNodes', []), 'length', 0);
+  function getChildren(node) {
+    return get(get(node, 'childNodes', []), 'length', 0);
   }
   
   function reflowChild(node, vDOM, iNode, iVDOM) {
