@@ -24,7 +24,7 @@ gulp.task('h', function () {
   
   return gulp.src('./src/package/h/*.js')
              .pipe(concat('rex-h.min.js'))
-             .pipe(uglify())
+             //.pipe(uglify())
              .pipe(gulp.dest('./dist/'));
   
 });

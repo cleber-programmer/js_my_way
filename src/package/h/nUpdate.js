@@ -17,7 +17,7 @@ Rex('h.nUpdate', [
   }
   
   function update(node, properties) {
-    return forEach(['style', 'dataset'], partial(merge, [node, properties])), nExtend(node, properties);
+    return forEach(['dataset', 'style'], partial(merge, [node, properties])), (delete properties['style']), nExtend(node, properties);
   }
   
   function updateNode(node, vDOM) {
