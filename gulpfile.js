@@ -47,4 +47,13 @@ gulp.task('route', function () {
   
 });
 
-gulp.task('default', ['main', 'module', 'h', 'http', 'route']);
+gulp.task('w', function () {
+  
+  return gulp.src('./src/package/w/*.js')
+             .pipe(concat('rex-w.min.js'))
+             .pipe(uglify())
+             .pipe(gulp.dest('./dist/'));
+  
+});
+
+gulp.task('default', ['main', 'module', 'h', 'http', 'route', 'w']);
