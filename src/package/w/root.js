@@ -1,4 +1,4 @@
-Rex('w.root', [
+Rex('w.hRoot', [
   
     'get'
   , 'set'
@@ -6,7 +6,7 @@ Rex('w.root', [
 ], function (get, set) {
   
   return function (context) {
-    return get(set(context, 'innerHTML', '<div></div>'), 'childNodes', [])[0];
+    return get(set(context.createShadowRoot(), 'innerHTML', '<div></div>'), 'childNodes', [])[0];
   };
   
 });
