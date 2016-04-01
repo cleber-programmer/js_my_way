@@ -4,7 +4,7 @@ Rex('mask.value', [
   , 'push'
   , 'slice'
   , 'splice'
-  , 'target'
+  , 'mask.target'
   
 ], function (join, push, slice, splice, target) {
   
