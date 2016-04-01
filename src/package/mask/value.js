@@ -8,7 +8,7 @@ Rex('mask.value', [
   
 ], function (join, push, slice, splice, target) {
   
-  return function value(event) {
+  return function (event) {
       
     if (!(this instanceof arguments.callee)) {
       return new arguments.callee();
