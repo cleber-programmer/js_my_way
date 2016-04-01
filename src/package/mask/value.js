@@ -1,19 +1,16 @@
 Rex('mask.value', [
   
-    'apply'
-  , 'concat'
-  , 'join'
-  , 'push'
+    'join'
   , 'slice'
   , 'splice'
   , 'mask.target'
   
-], function (apply, concat, join, push, slice, splice, target) {
+], function (join, slice, splice, target) {
   
   return function (event) {
     return (function (chars) {
       
-      apply(push, concat(chars, slice(target(event).value)));
+      [].push.apply(chars, slice(target(event).value));
       
       if (event.keyCode) {
         splice(chars, target(event).selectionStart, 1, String.fromCharCode((96 <= event.keyCode && event.keyCode <= 105 ? event.keyCode - 48 : event.keyCode)));
