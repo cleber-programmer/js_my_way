@@ -1,16 +1,17 @@
 Rex('mask', [
   
     'equal'
+  , 'partial'
   , 'some'
   , 'translation'
   , 'mask.target'
   , 'mask.value'
   
-], function (equal, some, translation, target, value) {
+], function (equal, partial, some, translation, target, value) {
   
   return function (event, mask, inverse) {
     
-    if (some([8, 9, 13, ''], equal(event.keyCode))) {
+    if (some([8, 9, 13, ''], partial(equal, [event.keyCode]))) {
       return;
     }
     
