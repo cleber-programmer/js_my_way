@@ -15,7 +15,7 @@ Rex('curry', [
   function iterator(args) {
     return function () {
       return args.shift();
-    }
+    };
   }
   
   function mapper(template, next) {
