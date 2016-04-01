@@ -11,7 +11,7 @@ Rex('mask.value', [
   return function (event) {
       
     if (!(this instanceof arguments.callee)) {
-      return new arguments.callee();
+      return new arguments.callee(event);
     }
 
     push(this, slice(target(event).value));
