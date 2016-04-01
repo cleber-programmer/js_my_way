@@ -1,12 +1,11 @@
 Rex('mask.value', [
   
     'join'
-  , 'push'
   , 'slice'
   , 'splice'
   , 'mask.target'
   
-], function (join, push, slice, splice, target) {
+], function (join, slice, splice, target) {
   
   return function (event) {
       
@@ -14,7 +13,7 @@ Rex('mask.value', [
       return new arguments.callee(event);
     }
 
-    push(this, slice(target(event).value));
+    [].push.apply(this, slice(target(event).value));
     
     if (event.keyCode) {
       splice(this, target(event).selectionStart, 1, String.fromCharCode((96 <= event.keyCode && event.keyCode <= 105 ? event.keyCode - 48 : event.keyCode)));
