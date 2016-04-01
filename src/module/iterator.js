@@ -14,7 +14,7 @@ Rex('iterator', [
     
     return !(this instanceof arguments.callee)
 
-    ? new arguments.callee(data)
+    ? new arguments.callee(-1, data)
     
     : {
       
