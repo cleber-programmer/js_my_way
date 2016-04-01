@@ -38,6 +38,15 @@ gulp.task('http', function () {
   
 });
 
+gulp.task('mask', function () {
+  
+  return gulp.src('./src/package/mask/*.js')
+             .pipe(concat('rex-mask.min.js'))
+             .pipe(uglify())
+             .pipe(gulp.dest('./dist/'));
+  
+});
+
 gulp.task('route', function () {
   
   return gulp.src('./src/package/route/*.js')
@@ -56,4 +65,4 @@ gulp.task('w', function () {
   
 });
 
-gulp.task('default', ['main', 'module', 'h', 'http', 'route', 'w']);
+gulp.task('default', ['main', 'module', 'h', 'http', 'mask', 'route', 'w']);
