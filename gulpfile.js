@@ -20,6 +20,15 @@ gulp.task('module', function () {
   
 });
 
+gulp.task('dispatcher', function () {
+  
+  return gulp.src('./src/package/dispatcher/*.js')
+             .pipe(concat('rex-dispatcher.min.js'))
+             .pipe(uglify())
+             .pipe(gulp.dest('./dist/'));
+  
+});
+
 gulp.task('h', function () {
   
   return gulp.src('./src/package/h/*.js')
@@ -65,4 +74,4 @@ gulp.task('w', function () {
   
 });
 
-gulp.task('default', ['main', 'module', 'h', 'http', 'mask', 'route', 'w']);
+gulp.task('default', ['main', 'module', 'dispatcher', 'h', 'http', 'mask', 'route', 'w']);
