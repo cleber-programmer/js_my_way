@@ -13,7 +13,7 @@ Rex('route.init', [
 ], function (equal, every, forEach, get, keys, split, test, handler, param) {
 
   function callback(url) {
-    every(split(url, '/'), compare) && handler[url](history.state, param(url));
+    every(split(url, '/'), compare) && handler[url](window.history.state, param(url));
   }
 
   function compare(path, index) {
