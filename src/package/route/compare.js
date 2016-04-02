@@ -1,6 +1,6 @@
 Rex('route.compare', [
   
-  'equa',
+  'equal',
   'get',
   'split',
   'test'
