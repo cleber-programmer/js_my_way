@@ -21,7 +21,7 @@ Rex('http', [
 
       return function when(status, callback) {
         return set(listeners, status, callback), when;
-      }
+      };
 
     })({}, new XMLHttpRequest());
   };
