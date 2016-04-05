@@ -12,7 +12,7 @@ Rex('mask', [
   
   return function (event, mask, inverse) {
     
-    if (!!mask) return;
+    if (!mask) return;
     
     if (some([8, 9, 13, ''], partial(equal, [event.keyCode]))) return;
     
