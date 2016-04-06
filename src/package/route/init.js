@@ -9,12 +9,13 @@ Rex('route.init', [
   'test',
   'route.compare',
   'route.handler',
-  'route.param'
+  'route.param',
+  'route.query'
 
-], function (equal, every, forEach, get, keys, split, test, compare, handler, param) {
+], function (equal, every, forEach, get, keys, split, test, compare, handler, param, query) {
 
   function callback(url) {
-    every(split(url, '/'), compare) && handler[url](window.history.state, param(url));
+    every(split(url, '/'), compare) && handler[url](window.history.state, param(url), query());
   }
 
   return window.onpopstate = function () {
