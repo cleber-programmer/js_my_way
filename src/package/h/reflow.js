@@ -13,17 +13,19 @@ Rex('h.reflow', [
   }
   
   function reflowChild(node, vDOM, iNode, iVDOM) {
-    return reflowNode(get(node, 'childNodes', [])[iNode], get(vDOM, 'childNodes', [])[iVDOM], node), node;
+    reflowNode(get(node, 'childNodes', [])[iNode], get(vDOM, 'childNodes', [])[iVDOM], node), node;
   }
   
   function reflowNode(node, vDOM, parentNode) {
-    return solve(repaint(node, vDOM, get(node, 'parentNode', parentNode)), vDOM);
+    window.requestAnimationFrame(function () {
+      solve(repaint(node, vDOM, get(node, 'parentNode', parentNode)), vDOM);
+    });
   }
   
   function solve(node, vDOM) {
-    return forEach(sparseOfChildren(node, vDOM), function (_, indice, children) {
+    forEach(sparseOfChildren(node, vDOM), function (_, indice, children) {
       reflowChild(node, vDOM, (indice - (children.length - sparseOfChildren(node, vDOM).length)), indice);
-    }), node;
+    });
   }
   
   function sparseOfChildren(node, vDOM) {

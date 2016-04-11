@@ -30,7 +30,9 @@
       mapper(build(dependencies, callback));
     });
 
-    modules.forEach(mapper);
+    modules.forEach(function (module) {
+      window.setTimeout(mapper.bind(null, module), 0);
+    });
 
   });
 
