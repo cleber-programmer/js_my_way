@@ -1,6 +1,7 @@
 Rex('lambda', [
 
   'apply',
+  'arity',
   'concat',
   'curry',
   'format',
@@ -9,12 +10,12 @@ Rex('lambda', [
   'split',
   '_'
 
-], function (apply, concat, curry, format, match, partial, split, _) {
+], function (apply, arity, concat, curry, format, match, partial, split, _) {
 
-  function lambda(arrow, expression) {
+  function callback(arrow, expression) {
     return apply(Function, concat(split(arrow(expression)[1], ','), [format('return {0}', [arrow(expression)[2]])]));
   }
   
-  return partial(lambda, [curry(match)(_, /^\((.*)\)\s*=>\s*(.*)$/)]);
+  return partial(callback, [curry(arity(2, match))(_, /^\((.*)\)\s*=>\s*(.*)$/)]);
 
 });
