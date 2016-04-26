@@ -7,6 +7,6 @@ Rex('route', [
 
   return function (url, callback) {
     set(handler, url, callback);
-  }
+  };
 
 });
