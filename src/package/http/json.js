@@ -1,4 +1,4 @@
-Rex('http.interceptor.json', ['or'], function (or) {
+Rex('http.json', ['or'], function (or) {
 
   return {
 
