@@ -4,26 +4,21 @@ Rex('http.interceptor', [
   'get',
   'or',
   'reduce',
-  'http.interceptor.json',
+  'http.handler',
   '_'
 
-], function (curry, get, or, reduce, json, _) {
+], function (curry, get, or, reduce, handler, _) {
 
-  return (function (interceptors) {
+  function gap(data) {
+    return data;
+  }
 
-    function gap(data) {
-      return data;
-    }
-
-    function transform(method, data, xhr, interceptor) {
-      return or(get(interceptor, method), gap)(data, xhr);
-    }
-    
-    return function (method, data, xhr) {
-      return reduce(interceptors, curry(transform)(method, _, xhr, _), data);
-    };
-
-  })
-  ([json]);
+  function transform(method, data, xhr, interceptor) {
+    return or(get(interceptor, method), gap)(data, xhr);
+  }
+  
+  return function (method, data, xhr) {
+    return reduce(handler, curry(transform)(method, _, xhr, _), data);
+  };
   
 });
