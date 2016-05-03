@@ -9,16 +9,16 @@ Rex('http.interceptor', [
 
 ], function (curry, get, or, reduce, handler, _) {
 
-  function gap(data) {
+  function gap(method, url, data, xhr) {
     return data;
   }
 
-  function transform(method, data, xhr, interceptor) {
-    return or(get(interceptor, method), gap)(data, xhr);
+  function transform(step, method, url, data, xhr, interceptor) {
+    return or(get(interceptor, step), gap)(method, url, data, xhr);
   }
   
-  return function (method, data, xhr) {
-    return reduce(handler, curry(transform)(method, _, xhr, _), data);
+  return function (step, method, url, data, xhr) {
+    return reduce(handler, curry(transform)(step, method, url, _, xhr, _), data);
   };
   
 });

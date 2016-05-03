@@ -1,5 +1,5 @@
-Rex('http.handler', ['http.json'], function (json) {
+Rex('http.handler', [], function (json) {
   
-  return [json];
+  return [];
   
 });

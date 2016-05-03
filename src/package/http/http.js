@@ -13,11 +13,11 @@ Rex('http', [
     return (function (listeners, xhr) {
 
       xhr.onreadystatechange = function () {
-        equal(get(this, 'readyState'), 4) && or(get(listeners, get(this, 'status')), always)(interceptor('response', get(this, 'responseText'), this), this);
+        equal(get(this, 'readyState'), 4) && or(get(listeners, get(this, 'status')), always)(interceptor('response', method, url, get(this, 'responseText'), this), this);
       };
       
       xhr.open(method, url, !0);
-      xhr.send(interceptor('request', data, xhr));
+      xhr.send(interceptor('request', method, url, data, xhr));
 
       return function when(status, callback) {
         return set(listeners, status, callback), when;
