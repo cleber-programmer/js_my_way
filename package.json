@@ -4,7 +4,7 @@
   "description": "JavaScript is like a blank sheet - 'Freedom to program the way that makes sense to you!'",
   "main": "index.js",
   "scripts": {
-    "gulp": "gulp default",
+    "build": "gulp default",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
