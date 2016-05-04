@@ -7,7 +7,12 @@ Rex('http.parse', ['or'], function (or) {
     },
 
     response: function (method, url, data, xhr) {
-      return JSON.parse(or(data || '{}'));
+      try {
+        return JSON.parse(or(data || '{}'));
+      }
+      finally {
+        return data;
+      }
     }
 
   };
