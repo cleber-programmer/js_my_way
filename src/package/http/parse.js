@@ -10,7 +10,7 @@ Rex('http.parse', ['or'], function (or) {
       try {
         return JSON.parse(or(data || '{}'));
       }
-      finally {
+      catch (err) {
         return data;
       }
     }
