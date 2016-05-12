@@ -1,7 +1,30 @@
-Rex('slice', [], function () {
+Rex('slice', [
+  
+    'cond'
+  , 'isString'
+  , 't'
 
-  return function (array) {
-    return [].slice.apply(array, [].slice.call(arguments, 1));
+
+], function (cond, isString, t) {
+
+  return function (value) {
+    return cond([
+      
+        [
+            isString
+          , function () {
+              return ''.slice.apply(value, [].slice.call(arguments, 1));
+            }
+        ]
+      
+      , [
+            t
+          , function () {
+              return [].slice.apply(value, [].slice.call(arguments, 1));
+            }
+        ]
+      
+    ])(value);
   };
 
 });
