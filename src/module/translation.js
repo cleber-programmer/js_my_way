@@ -5,10 +5,10 @@ Rex('translation', [
   'map',
   'partial',
   'reverse',
-  'slice',
-  'test'
+  'test',
+  'toArray'
 
-], function (iterator, join, map, partial, reverse, slice, test) {
+], function (iterator, join, map, partial, reverse, test, toArray) {
 
   var hash = {
     
@@ -46,7 +46,7 @@ Rex('translation', [
   return function (mask, value, inverse) {
 
     return (function (inverse) {
-      return join(inverse(map(inverse(slice(mask)), partial(mapper, [iterator(inverse(slice(value)))]))), '');
+      return join(inverse(map(inverse(toArray(mask)), partial(mapper, [iterator(inverse(toArray(value)))]))), '');
     })
     (
         inverse
