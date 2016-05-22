@@ -6,9 +6,9 @@ Se você procura por um guia de estilo opinativo para sintaxe, convenções e es
 
 A proposta deste guia de estilo é fornecer uma direção na construção de Arquitetura JavaScript em Aplicações de Larga Escala, mostrando convenções que eu uso, e o mais importante, porque eu as escolhi.
 
-Embora este guia explique o **o quê**, **porque** e **como**, acho útil ver tudo isso em prática. Este guia é acompanhado de uma aplicação de exemplo que segue estes estilos e padrões. Você pode encontrar a [aplicação de exemplo (chamada "modular") aqui](https://github.com/cleber-programmer/ng-demos) na pasta `modular`. Sinta-se livre para pegá-la, cloná-la e *forká-la*. [Instruções de como rodar o aplicativo estão em seu README](https://github.com/cleber-programmer/ng-demos/tree/master/modular).
+Embora este guia explique o **o quê**, **porque** e **como**, acho útil ver tudo isso em prática. Este guia é acompanhado de uma aplicação de exemplo que segue estes estilos e padrões.
 
-> Para eventuais erros de digitação e/ou tradução, favor enviar um pull-request!
+Para eventuais erros de digitação e/ou tradução, favor enviar um pull-request!
 
 ## Tabela de Conteúdo
 
