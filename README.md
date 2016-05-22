@@ -1,31 +1,13 @@
 # Guia de Estilo Rex
 
-JavaScript é como uma folha em branco – "A liberdade de programar do jeito que faça sentido pra você!"
+> JavaScript é como uma folha em branco – "A liberdade de programar do jeito que faça sentido pra você!"
 
-*Guia de Estilo opinativo de Javascript para times
+Se você procura por um guia de estilo opinativo para sintaxe, convenções e estruturação de aplicações JavaScript, então siga em frente! Estes estilos são baseados em minha experiência com desenvolvimento com JavaScript e trabalhando em equipe.
 
-Se você procura por um guia de estilo opinativo para sintaxe, convenções e estruturação de aplicações JavaScript, então siga em frente! Estes estilos são baseados em minha experiência com desenvolvimento com [AngularJS](//angularjs.org), apresentações, [cursos de treinamento na Pluralsight](http://pluralsight.com/training/Authors/Details/john-papa) e trabalhando em equipe.
+A proposta deste guia de estilo é fornecer uma direção na construção de Arquitetura JavaScript em Aplicações de Larga Escala, mostrando convenções que eu uso, e o mais importante, porque eu as escolhi.
 
+Embora este guia explique o **o quê**, **porque** e **como**, acho útil ver tudo isso em prática. Este guia é acompanhado de uma aplicação de exemplo que segue estes estilos e padrões. Você pode encontrar a [aplicação de exemplo (chamada "modular") aqui](https://github.com/cleber-programmer/ng-demos) na pasta `modular`. Sinta-se livre para pegá-la, cloná-la e *forká-la*. [Instruções de como rodar o aplicativo estão em seu README](https://github.com/cleber-programmer/ng-demos/tree/master/modular).
 
-
-> Se você gostar deste guia, confira meu curso [Angular Patterns: Clean Code](http://jpapa.me/ngclean) na Pluralsight.
-
-A proposta deste guia de estilo é fornecer uma direção na construção de aplicações Angular mostrando convenções que eu uso, e o mais importante, porque eu as escolhi.
-
-## A Importância da Comunidade e Créditos
-
-Nunca trabalhe sozinho. Acho que a comunidade Angular é um grupo incrível, apaixonado em compartilhar experiências. Dessa forma, Todd Motto, um amigo e expert em Angular e eu temos colaborado com vários estilos e convenções. Nós concordamos na maioria deles, e discordamos em alguns. Eu encorajo você a conferir o [guia do Todd](https://github.com/toddmotto/angularjs-styleguide) para ter uma noção sobre sua abordagem e como ela se compara a esta.
-
-Vários de meus estilos vieram de várias sessões de pair-programming (programação pareada) que [Ward Bell](http://twitter.com/wardbell) e eu tivemos. Embora não concordemos sempre, meu amigo Ward certamente me ajudou influenciando na última evolução deste guia.
-
-## Veja os estilos em um aplicativo de exemplo
-
-Embora este guia explique o **o quê**, **porque** e **como**, acho útil ver tudo isso em prática. Este guia é acompanhado de uma aplicação de exemplo que segue estes estilos e padrões. Você pode encontrar a [aplicação de exemplo (chamada "modular") aqui](https://github.com/johnpapa/ng-demos) na pasta `modular`. Sinta-se livre para pegá-la, cloná-la e *forká-la*. [Instruções de como rodar o aplicativo estão em seu README](https://github.com/johnpapa/ng-demos/tree/master/modular).
-
-> **Nota de tradução**: Os títulos originais de cada seção serão mantidos, pois caso você queira buscar mais sobre estes assuntos futuramente, fazendo tal busca em inglês será obtido um resultado **imensamente** melhor.
->
-> Após o título, estará a tradução auxiliar, quando necessária, visto que alguns termos são mais facilmente entendidos quando não traduzidos, por fazerem parte do núcleo do estudo em questão.
->
 > Para eventuais erros de digitação e/ou tradução, favor enviar um pull-request!
 
 ## Tabela de Conteúdo
