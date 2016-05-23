@@ -49,8 +49,13 @@ O exemplo seguinte define um módulo `add` e `subtract` todos no mesmo arquivo.
 /**
  * Evite
  */
-Rex('add', [], add);
-Rex('subtract', [], subtract);
+Rex('add', [], function () {
+  return add;
+});
+
+Rex('subtract', [], function () {
+  return subtract;
+});
 
 function add(a, b) {
   return a + b;
@@ -67,7 +72,9 @@ Os mesmos modulos agora estão separados em seus próprios arquivos.
 /**
  * Recomendado
  */
-Rex('add', [], add);
+Rex('add', [], function () {
+  return add;
+});
 
 function add(a, b) {
   return a + b;
@@ -78,7 +85,9 @@ function add(a, b) {
 /**
  * Recomendado
  */
-Rex('subtract', [], subtract);
+Rex('subtract', [], function () {
+  return subtract;
+});
 
 function subtract(a, b) {
   return a - b;
@@ -90,67 +99,47 @@ function subtract(a, b) {
 ## IIFE
 ### JavaScript Closures
 
-  - Envolva os componentes Angular em uma *Immediately Invoked Function Expression (IIFE - Expressão de função imediatamente invocada)*.
+- Envolva os módulos em uma *Immediately Invoked Function Expression (IIFE - Expressão de função imediatamente invocada)*.
 
-  **Por que?** Uma IIFE remove as variáveis do escopo global. Isso ajuda a prevenir declarações de variáveis e funções de viverem por mais tempo que o esperado no escopo global, que também auxilia evitar colisões de variáveis.
+**Por que?** Uma IIFE remove as variáveis do escopo global. Isso ajuda a prevenir declarações de variáveis e funções de viverem por mais tempo que o esperado no escopo global, que também auxilia evitar colisões de variáveis.
 
-  **Por que?** Quando seu código é minificado e empacotado dentro de um único arquivo para *deployment* no servidor de produção, você pode ter conflitos de variáveis e muitas variáveis globais. Uma IIFE o protege em todos estes aspectos provendo escopo de variável para cada arquivo.
+**Por que?** Quando seu código é minificado e empacotado dentro de um único arquivo para *deployment* no servidor de produção, você pode ter conflitos de variáveis e muitas variáveis globais. Uma IIFE o protege em todos estes aspectos provendo escopo de variável para cada arquivo.
 
-  ```javascript
-  /* evite */
-  // logger.js
-  angular
-      .module('app')
-      .factory('logger', logger);
+```javascript
+/**
+ * Evite
+ */
+Rex('add', [], function () {
+  return add;
+});
 
-  // função logger é adicionada como uma variável global
-  function logger() { }
+function add(a, b) {
+  return a + b;
+}
+```
 
-  // storage.js
-  angular
-      .module('app')
-      .factory('storage', storage);
+```javascript
+/**
+ * recomendado
+ */
+Rex('add', [], function () {
 
-  // função storage é adicionada como uma variável global
-  function storage() { }
-  ```
+  'use strict';
 
+  function add(a, b) {
+    return a + b;
+  }
 
-  ```javascript
-  /**
-   * recomendado
-   *
-   * nada global é deixado para trás
-   */
+  return add;
+  
+});
+```
 
-  // logger.js
-  (function() {
-      'use strict';
+- **Nota**: Apenas para agilizar, o resto dos exemplos neste guia omitirão a sintaxe IIFE.
 
-      angular
-          .module('app')
-          .factory('logger', logger);
+- **Nota**: IIFE impede que códigos de teste alcancem membros privados como expressões regulares ou funções auxiliares que são frequentemente boas para testes unitários. Entretanto, você pode testá-las através de membros acessíveis ou expondo-os pelo próprio componente. Por exemplo, colocando funções auxiliares, expressões regulares ou constantes em sua própria *factory* ou constante.
 
-      function logger() { }
-  })();
-
-  // storage.js
-  (function() {
-      'use strict';
-
-      angular
-          .module('app')
-          .factory('storage', storage);
-
-      function storage() { }
-  })();
-  ```
-
-  - **Nota**: Apenas para agilizar, o resto dos exemplos neste guia omitirão a sintaxe IIFE.
-
-  - **Nota**: IIFE impede que códigos de teste alcancem membros privados como expressões regulares ou funções auxiliares que são frequentemente boas para testes unitários. Entretanto, você pode testá-las através de membros acessíveis ou expondo-os pelo próprio componente. Por exemplo, colocando funções auxiliares, expressões regulares ou constantes em sua própria *factory* ou constante.
-
-**[De volta ao topo](#tabela-de-conte%C3%BAdo)**
+**[De volta ao topo](#tabela-de-conteúdo)**
 
 ## Modules
 ou *Módulos*
