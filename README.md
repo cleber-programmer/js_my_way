@@ -120,11 +120,30 @@ function add(a, b) {
 
 ```javascript
 /**
- * recomendado
+ * Recomendado
  */
-Rex('add', [], function () {
+(function () {
 
   'use strict';
+
+  Rex('add', [], function () {
+    return add;
+  });
+  
+  function add(a, b) {
+    return a + b;
+  }
+  
+})();
+```
+
+Prefira utilizar a função construtura para prever escopo de variável para cada arquivo.
+
+```javascript
+/**
+ * Recomendado
+ */
+Rex('add', [], function () {
 
   function add(a, b) {
     return a + b;
@@ -142,115 +161,138 @@ Rex('add', [], function () {
 **[De volta ao topo](#tabela-de-conteúdo)**
 
 ## Modules
-ou *Módulos*
-
 ### Avoid Naming Collisions
-ou *Evitando Colisão de Nomes*
 
-  - Use uma única convenção de nomes com separadores para sub-módulos.
+- Use uma única convenção de nomes com separadores para sub-módulos.
 
-  **Por que?** Nomes únicos ajudam a evitar colisão de nomes no módulo. Separadores ajudam a definir a hierarquia de módulos e submódulos. Por exemplo, `app` pode ser seu módulo raiz, enquanto `app.dashboard` e `app.users` podem ser módulos que são usados como dependências de `app`.
+**Por que?** Nomes únicos ajudam a evitar colisão de nomes no módulo. Separadores ajudam a definir a hierarquia de módulos e submódulos. Por exemplo, `app` pode ser seu módulo raiz, enquanto `app.dashboard` e `app.users` podem ser módulos que são usados como dependências de `app`.
 
-### Definições (*aka Setters*)
+### Setters
 
-> ps: **aka** é o acrônimo de **A**lso **K**nown** **A**s, de forma traduzida, **também conhecido como**.
+- Declare os módulos sem múltiplas funções usando a sintaxe *setter*.
 
-  - Declare os módulos sem uma variável usando a sintaxe *setter*.
+**Por que?** Com 1 componente por arquivo, raramente será necessário criar uma variável para o módulo.
 
-  **Por que?** Com 1 componente por arquivo, raramente será necessário criar uma variável para o módulo.
+```javascript
+/**
+ * Evite
+ */
+Rex('app', [], function () {
 
-  ```javascript
-  /* evite */
-  var app = angular.module('app', [
-      'ngAnimate',
-      'ngRoute',
-      'app.shared',
-      'app.dashboard'
-  ]);
-  ```
+  function dashboard() {
+    /* */
+  };
+  
+  function users () {
+    /* */
+  };
 
-  Ao invés, use a simples sintaxe *setter*.
+  function app() {
+    /* */
+  }
 
-  ```javascript
-  /* recomendado */
-  angular
-    	.module('app', [
-          'ngAnimate',
-          'ngRoute',
-          'app.shared',
-          'app.dashboard'
-      ]);
-  ```
+  return app;
+  
+});
+```
+
+Ao invés, use a simples sintaxe *setter*.
+
+```javascript
+/**
+ * Recomendado
+ */
+Rex('app.dashboard', [], function () {
+
+  function dashboard() {
+    /* */
+  }
+  
+  return dashboard;
+  
+});
+```
+
+```javascript
+/**
+ * Recomendado
+ */
+Rex('app.users', [], function () {
+
+  function users() {
+    /* */
+  }
+  
+  return users;
+  
+});
+```
 
 ### *Getters*
 
-  - Ao usar um módulo, evite usar uma variável. Em vez disso, use encadeamento com a sintaxe *getter*.
+- Ao usar um módulo, evite usar múltiplas sub-funções. Em vez disso, use encadeamento com a sintaxe *getter*.
 
-  **Por que?** Isso produz um código mais legível e evita colisão de variáveis ou vazamentos.
+**Por que?** Isso produz um código mais legível e evita colisão de variáveis ou vazamentos.
 
-  ```javascript
-  /* evite */
-  var app = angular.module('app');
-  app.controller('SomeController' , SomeController);
+```javascript
+/**
+ * Recomendado
+ */
+Rex('app', ['app.dashboard', 'app.users'], function (dashboard, users) {
 
-  function SomeController() { }
-  ```
-
-  ```javascript
-  /* recomendado */
-  angular
-      .module('app')
-      .controller('SomeController' , SomeController);
-
-  function SomeController() { }
-  ```
+  function app() {
+    /* */
+  }
+  
+  return app;
+  
+});
+```
 
 ### *Setting* vs *Getting*
-ou *Definindo* vs *Obtendo*
 
-  - Apenas *set* (configure) uma vez e *get* (receba) em todas as outras instâncias.
+- Apenas *set* (configure) uma vez e *get* (receba) em todas as outras instâncias.
 
-  **Por que?** Um módulo deve ser criado somente uma vez, então recupere-o deste ponto em diante.
+**Por que?** Um módulo deve ser criado somente uma vez, então recupere-o deste ponto em diante.
 
-	  - Use `angular.module('app', []);` para definir (*set*) um módulo.
-	  - Use  `angular.module('app');` para pegar (*get*) este módulo.
+- Use `Rex('app.dashboard', []);` para definir (*set*) um módulo.
+- Use `Rex('app', ['app.dashboard']);` para pegar (*get*) este módulo.
 
 ### Named vs Anonymous Functions
-ou *Funções Nomeadas vs Funções Anônimas*
 
-  - Use funções nomeadas ao invés de passar uma função anônima como um callback.
+- Use funções nomeadas ao invés de passar uma função anônima como um callback.
 
-  **Por que?** Isso produz um código mais legível, é muito fácil de *debugar*, e reduz a quantidade de callbacks aninhados no código.
+**Por que?** Isso produz um código mais legível, é muito fácil de *debugar*, e reduz a quantidade de callbacks aninhados no código.
 
-  ```javascript
-  /* evite */
-  angular
-      .module('app')
-      .controller('Dashboard', function() { });
-      .factory('logger', function() { });
-  ```
+```javascript
+/**
+ * Evite
+ */
+Rex('add', [], function () {
 
-  ```javascript
-  /* recomendado */
+  return function (a, b) {
+    return a + b;
+  };
+  
+});
+```
 
-  // dashboard.js
-  angular
-      .module('app')
-      .controller('Dashboard', Dashboard);
+```javascript
+/**
+ * Recomendado
+ */
+Rex('add', [], function () {
 
-  function Dashboard() { }
-  ```
+  function add(a, b) {
+    return a + b;
+  }
 
-  ```javascript
-  // logger.js
-  angular
-      .module('app')
-      .factory('logger', logger);
+  return add;
+  
+});
+```
 
-  function logger() { }
-  ```
-
-**[De volta ao topo](#tabela-de-conte%C3%BAdo)**
+**[De volta ao topo](#tabela-de-conteúdo)**
 
 ## Controllers
 ou *Controladores*
