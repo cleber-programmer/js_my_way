@@ -1,4 +1,4 @@
-# Guia de Estilo Rex
+# Rex
 
 > JavaScript é como uma folha em branco – "A liberdade de programar do jeito que faça sentido pra você!"
 
@@ -40,59 +40,52 @@ Para eventuais erros de digitação e/ou tradução, favor enviar um pull-reques
   1. [License](#license)
 
 ## Single Responsibility
-ou *Responsabilidade Única*
 
-### Regra nº 1
+- Defina um componente por arquivo.
 
-  - Defina um componente por arquivo.
+O exemplo seguinte define um módulo `add` e `subtract` todos no mesmo arquivo.
 
-  O exemplo seguinte define um módulo `app` e suas dependências, define um controller e define uma factory, todos no mesmo arquivo.
+```javascript
+/**
+ * Evite
+ */
+Rex('add', [], add);
+Rex('subtract', [], subtract);
 
-  ```javascript
-  /* evite */
-  angular
-    	.module('app', ['ngRoute'])
-    	.controller('SomeController' , SomeController)
-    	.factory('someFactory' , someFactory);
+function add(a, b) {
+  return a + b;
+}
 
-  function SomeController() { }
+function subtract(a, b) {
+  return a - b;
+}
+```
 
-  function someFactory() { }
-  ```
+Os mesmos modulos agora estão separados em seus próprios arquivos.
 
-  Os mesmos componentes agora estão separados em seus próprios arquivos.
+```javascript
+/**
+ * Recomendado
+ */
+Rex('add', [], add);
 
-  ```javascript
-  /* recomendado */
+function add(a, b) {
+  return a + b;
+}
+```
 
-  // app.module.js
-  angular
-    	.module('app', ['ngRoute']);
-  ```
+```javascript
+/**
+ * Recomendado
+ */
+Rex('subtract', [], subtract);
 
-  ```javascript
-  /* recomendado */
+function subtract(a, b) {
+  return a - b;
+}
+```
 
-  // someController.js
-  angular
-    	.module('app')
-    	.controller('SomeController' , SomeController);
-
-  function SomeController() { }
-  ```
-
-  ```javascript
-  /* recomendado */
-
-  // someFactory.js
-  angular
-    	.module('app')
-    	.factory('someFactory' , someFactory);
-
-  function someFactory() { }
-  ```
-
-**[De volta ao topo](#tabela-de-conte%C3%BAdo)**
+**[De volta ao topo](#tabela-de-conteúdo)**
 
 ## IIFE
 ### JavaScript Closures
