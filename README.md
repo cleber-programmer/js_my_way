@@ -19,8 +19,8 @@ Para eventuais erros de digitação e/ou tradução, favor enviar um pull-reques
 - Em um arquivo JavaScript, use os comandos abaixo seguidos de `TAB`
 
 ```javascript
-remodule    // cria um modulo
-rbootstrap  // cria uma bootstrap
+rex.module      // cria um modulo
+rex.bootstrap   // cria um bootstrap
 ```
 
 ## Licença
