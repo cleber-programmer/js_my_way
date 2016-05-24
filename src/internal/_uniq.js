@@ -1,7 +1,7 @@
 (function (context) {
   
   function callback(previous, item) {
-    return !_contains(previous, item) && previous.push(item), previous;
+    return !context._contains(previous, item) && previous.push(item), previous;
   }
   
   context._uniq = function (array) {
