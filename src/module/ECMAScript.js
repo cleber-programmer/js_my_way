@@ -10,7 +10,7 @@
       context.Rex(name, [], function () {
         return function (object) {
           return object[name].apply(object, [].slice.call(arguments, 1));
-        }
+        };
       });
 
     })(item);
