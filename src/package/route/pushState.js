@@ -5,7 +5,7 @@ Rex('route.pushState', [
 ], function (init) {
 
   return function (state, title, url) {
-    history.pushState(state, title, url), init();
+    window.history.pushState(state, title, url), init();
   };
 
 });
