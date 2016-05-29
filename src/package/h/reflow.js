@@ -17,9 +17,10 @@ Rex('h.reflow', [
   }
   
   function reflowNode(node, vDOM, parentNode) {
-    window.requestAnimationFrame(function () {
-      solve(repaint(node, vDOM, get(node, 'parentNode', parentNode)), vDOM);
-    });
+    // window.requestAnimationFrame(function () {
+    //   solve(repaint(node, vDOM, get(node, 'parentNode', parentNode)), vDOM);
+    // });
+    solve(repaint(node, vDOM, get(node, 'parentNode', parentNode)), vDOM);
   }
   
   function solve(node, vDOM) {
