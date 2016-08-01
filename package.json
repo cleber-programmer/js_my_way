@@ -1,31 +1,25 @@
 {
-  "name": "rex",
+  "name": "Rex",
   "version": "1.0.0",
-  "description": "JavaScript is like a blank sheet - 'Freedom to program the way that makes sense to you!'",
-  "main": "index.js",
+  "description": "",
+  "main": "main.js",
   "scripts": {
     "build": "gulp default",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start my.conf.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cleber-programmer/rex.git"
-  },
-  "keywords": [
-    "Functional",
-    "Reactive",
-    "Programming",
-    "JavaScript"
-  ],
-  "author": "Cleber de Moraes Gonçalves",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cleber-programmer/rex/issues"
-  },
-  "homepage": "https://github.com/cleber-programmer/rex#readme",
+  "keywords": [],
+  "author": "Cleber de Moraes Gonçalves <cleber.programmer@hotmail.com>",
+  "license": "ISC",
   "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.0",
-    "gulp-uglify": "^1.5.3"
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.1.2",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.0.2"
   }
 }

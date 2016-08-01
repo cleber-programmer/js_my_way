@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rex</title>
+</head>
+<body>
+  <div id="rex"></div>
+  <script src="dist/rex.js"></script>
+  <script>
+
+    // Rex(({ vRender, vTag: { div, span }, vText, $ }) =>
+    //   $('#rex').appendChild(
+    //     vRender(
+    //       div([
+    //         span(vText('Ola mundo JavaScript')),
+    //         vText(';D')]))));
+
+    Rex(({ vRepaint, vTag: { div, span }, vText, $ }) =>
+      vRepaint($('#rex'),
+        div([
+          span(vText('Ola mundo JavaScript')),
+          vText(';D')])));
+
+  </script>
+</body>
+</html>
