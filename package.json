@@ -20,6 +20,7 @@
     "karma-babel-preprocessor": "^6.0.1",
     "karma-chrome-launcher": "^1.0.1",
     "karma-coverage": "^1.1.1",
-    "karma-jasmine": "^1.0.2"
+    "karma-jasmine": "^1.0.2",
+    "karma-mocha-reporter": "^2.1.0"
   }
 }
