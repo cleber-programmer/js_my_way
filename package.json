@@ -1,7 +1,7 @@
 {
   "name": "Rex",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "JavaScript é como uma folha em branco – \"A liberdade de programar do jeito que faça sentido pra você!\"",
   "main": "main.js",
   "scripts": {
     "build": "gulp default",

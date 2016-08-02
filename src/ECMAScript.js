@@ -5,10 +5,6 @@
     /**
      * Colecao de metodos dos objetos Array, Number, Object e String
      */
-    'anchor',
-    'big',
-    'blink',
-    'bold',
     'charAt',
     'charCodeAt',
     'codePointAt',

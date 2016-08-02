@@ -2,27 +2,6 @@
 
 > JavaScript é como uma folha em branco – "A liberdade de programar do jeito que faça sentido pra você!"
 
-Se você procura por um guia de estilo opinativo para sintaxe, convenções e estruturação de aplicações JavaScript, então siga em frente! Estes estilos são baseados em minha experiência com desenvolvimento com JavaScript e trabalhando em equipe.
-
-A proposta desta estruturação é fornecer uma direção na construção de Arquitetura JavaScript em Aplicações de Larga Escala, mostrando convenções que eu uso, e o mais importante, porque eu as escolhi.
-
-Embora esta estruturação explique o **o quê**, **porque** e **como**, acho útil ver tudo isso em prática. Este repositório é acompanhado de uma aplicação de exemplo que segue estes estilos e padrões.
-
-Para eventuais erros de digitação e/ou tradução, favor enviar um pull-request!
-
-## Arquivos de Templates e Fragmentos
-### Sublime Text
-
-- Download [Sublime Angular snippets](/snippet)
-- Coloque-os na pasta de pacotes
-- Reinicie o Sublime Text
-- Em um arquivo JavaScript, use os comandos abaixo seguidos de `TAB`
-
-```javascript
-rex.module      // cria um modulo
-rex.bootstrap   // cria um bootstrap
-```
-
 ## Licença
 ### The MIT License (MIT)
 
