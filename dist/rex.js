@@ -35,7 +35,7 @@
 'use strict';
 
 Rex('$', function () {
-	return(
+	return (
 
 		/**
    * Retorna o primeiro elemento dentro do documento que corresponde
@@ -49,7 +49,7 @@ Rex('$', function () {
 'use strict';
 
 Rex('always', function () {
-	return(
+	return (
 
 		/**
    * Retorna uma funcao que sempre retorna o valor dado
@@ -66,7 +66,7 @@ Rex('always', function () {
 'use strict';
 
 Rex('apply', function () {
-	return(
+	return (
 
 		/**
    * Executa uma função passando a colecao "parameters"
@@ -80,7 +80,7 @@ Rex('apply', function () {
 'use strict';
 
 Rex('assign', function () {
-	return(
+	return (
 
 		/**
    * Copia os valores de todas as propriedades proprias enumeraveis de um
@@ -98,7 +98,7 @@ Rex('compose', function (_ref) {
 	var concat = _ref.concat;
 	var reduce = _ref.reduce;
 	var reverse = _ref.reverse;
-	return(
+	return (
 
 		/**
    * Executa composicao de funcao direita para a esquerda
@@ -127,7 +127,7 @@ Rex('compose', function (_ref) {
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 Rex('cond', function () {
-	return(
+	return (
 
 		/**
    * Com o mesmo comportamento da cadeia de responsabilidade, evitando a nescessidade
@@ -174,7 +174,7 @@ Rex('cond', function () {
 Rex('contains', function (_ref) {
 	var different = _ref.different;
 	var indexOf = _ref.indexOf;
-	return(
+	return (
 
 		/**
    * Retorna true se o valor especificado e igual pelo menos um
@@ -194,7 +194,7 @@ Rex('curry', function (_ref) {
 	var partial = _ref.partial;
 	var repeat = _ref.repeat;
 	var _ = _ref._;
-	return(
+	return (
 
 		/**
    * Retorna uma funcao equivalente que seus argumentos nao necessitan
@@ -216,7 +216,7 @@ Rex('curry', function (_ref) {
 Rex('defaultTo', function (_ref) {
 	var curry = _ref.curry;
 	var or = _ref.or;
-	return(
+	return (
 
 		/**
    * Retorna o segundo argumento, se nao for null, indefinido ou NaN
@@ -227,7 +227,7 @@ Rex('defaultTo', function (_ref) {
 		})
 	);
 });
-"use strict";
+'use strict';
 
 (function () {
 
@@ -236,7 +236,7 @@ Rex('defaultTo', function (_ref) {
   /**
    * Colecao de metodos dos objetos Array, Number, Object e String
    */
-  "anchor", "big", "blink", "bold", "charAt", "charCodeAt", "codePointAt", "concat", "copyWithin", "endsWith", "entries", "every", "fill", "filter", "find", "findIndex", "fixed", "fontcolor", "fontsize", "forEach", "hasOwnProperty", "includes", "indexOf", "isPrototypeOf", "italics", "join", "keys", "lastIndexOf", "link", "localeCompare", "map", "match", "normalize", "pop", "propertyIsEnumerable", "push", "reduce", "reduceRight", "repeat", "replace", "reverse", "search", "shift", "slice", "small", "some", "sort", "splice", "split", "startsWith", "strike", "sub", "substr", "substring", "sup", "toExponential", "toFixed", "toLocaleLowerCase", "toLocaleString", "toLocaleUpperCase", "toLowerCase", "toPrecision", "toString", "toUpperCase", "trim", "trimLeft", "trimRight", "unshift", "valueOf", "values"
+  'charAt', 'charCodeAt', 'codePointAt', 'concat', 'copyWithin', 'endsWith', 'entries', 'every', 'fill', 'filter', 'find', 'findIndex', 'fixed', 'fontcolor', 'fontsize', 'forEach', 'hasOwnProperty', 'includes', 'indexOf', 'isPrototypeOf', 'italics', 'join', 'keys', 'lastIndexOf', 'link', 'localeCompare', 'map', 'match', 'normalize', 'pop', 'propertyIsEnumerable', 'push', 'reduce', 'reduceRight', 'repeat', 'replace', 'reverse', 'search', 'shift', 'slice', 'small', 'some', 'sort', 'splice', 'split', 'startsWith', 'strike', 'sub', 'substr', 'substring', 'sup', 'toExponential', 'toFixed', 'toLocaleLowerCase', 'toLocaleString', 'toLocaleUpperCase', 'toLowerCase', 'toPrecision', 'toString', 'toUpperCase', 'trim', 'trimLeft', 'trimRight', 'unshift', 'valueOf', 'values'
 
   /**
    * Construtor de modulos com metodos da colecao acima
@@ -257,7 +257,7 @@ Rex('defaultTo', function (_ref) {
 
 Rex('f', function (_ref) {
 	var always = _ref.always;
-	return(
+	return (
 
 		/**
    * Uma função que sempre retorna false,
@@ -270,7 +270,7 @@ Rex('f', function (_ref) {
 
 Rex('getter', function (_ref) {
 	var or = _ref.or;
-	return(
+	return (
 
 		/**
    * Retorna o valor de uma chave de um objeto ou
@@ -315,7 +315,7 @@ Rex('mapFormat', function (_ref) {
 	var and = _ref.and;
 	var equal = _ref.equal;
 	var map = _ref.map;
-	return(
+	return (
 
 		/**
    * Mapeia uma colecao, substituindo todos os elementos baseado no index
@@ -332,7 +332,7 @@ Rex('mapFormat', function (_ref) {
 'use strict';
 
 Rex('max', function () {
-	return(
+	return (
 
 		/**
    * Retorna o maior numero de um ou mais numeros
@@ -343,7 +343,7 @@ Rex('max', function () {
 'use strict';
 
 Rex('not', function () {
-	return(
+	return (
 
 		/**
    * Executa o cast para boolean e invert o valor
@@ -384,7 +384,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 Rex('partial', function (_ref) {
 	var apply = _ref.apply;
 	var concat = _ref.concat;
-	return(
+	return (
 
 		/**
    * Retorna uma funcao anonima e quando aplicado, retorna o resultado da aplicacao
@@ -411,7 +411,7 @@ Rex('repeat', function (_ref) {
 	var always = _ref.always;
 	var map = _ref.map;
 	var split = _ref.split;
-	return(
+	return (
 
 		/**
    * Retorna uma lista fixa de tamanho "size" contendo o valor "value"
@@ -426,7 +426,7 @@ Rex('repeat', function (_ref) {
 
 Rex('t', function (_ref) {
 	var always = _ref.always;
-	return(
+	return (
 
 		/**
    * Uma função que sempre retorna false,
@@ -438,7 +438,7 @@ Rex('t', function (_ref) {
 'use strict';
 
 Rex('test', function () {
-	return(
+	return (
 
 		/**
    * Executa uma busca por uma correspondencia entre  uma expressao regular e uma string
@@ -452,7 +452,7 @@ Rex('test', function () {
 'use strict';
 
 Rex('UUID', function () {
-	return(
+	return (
 
 		/**
    * Identificacao unica para usuario
@@ -466,7 +466,7 @@ Rex('UUID', function () {
 
 Rex('_', function (_ref) {
 	var UUID = _ref.UUID;
-	return(
+	return (
 
 		/**
    * Retorna um valor unico que sera utilizado
@@ -478,7 +478,7 @@ Rex('_', function (_ref) {
 'use strict';
 
 Rex('vAppendChild', function (r) {
-	return(
+	return (
 
 		/**
    * Inclui cada filho do vNode em node, utilizando o vRender para
@@ -495,7 +495,7 @@ Rex('vAppendChild', function (r) {
 
 Rex('vAppendNode', function (_ref) {
 	var vAppendChild = _ref.vAppendChild;
-	return(
+	return (
 
 		/**
    * Insere um novo node na arvore do DOM
@@ -511,7 +511,7 @@ Rex('vChildNodes', function (_ref) {
 	var concat = _ref.concat;
 	var not = _ref.not;
 	var isObject = _ref.isObject;
-	return(
+	return (
 
 		/**
    * Abstracao de um ChildNodes Element (Virtual ChildNodes)
@@ -530,7 +530,7 @@ Rex('vCreateNode', function (_ref) {
 	var vAppendChild = _ref.vAppendChild;
 	var vExtendProperty = _ref.vExtendProperty;
 	var _ = _ref._;
-	return(
+	return (
 
 		/**
    * Cria um vNode, aplicando suas propriedades e incluindo
@@ -544,7 +544,7 @@ Rex('vCreateNode', function (_ref) {
 'use strict';
 
 Rex('vCreateText', function () {
-	return(
+	return (
 
 		/**
    * Cria um TextNode
@@ -565,7 +565,7 @@ Rex('vExtendNode', function (_ref) {
 	var vExtendTextContent = _ref.vExtendTextContent;
 	var vReflow = _ref.vReflow;
 	var _ = _ref._;
-	return(
+	return (
 
 		/**
    * Atualiza o Node real pelo vNode ou vText
@@ -580,7 +580,7 @@ Rex('vExtendNode', function (_ref) {
 Rex('vExtendProperty', function (_ref) {
 	var curry = _ref.curry;
 	var assign = _ref.assign;
-	return(
+	return (
 
 		/**
    * Extende as propriedades de um Node, incluindo os
@@ -595,7 +595,7 @@ Rex('vExtendProperty', function (_ref) {
 
 Rex('vExtendTextContent', function (_ref) {
 	var curry = _ref.curry;
-	return(
+	return (
 
 		/**
    * Altera o Text Content do node real pelo
@@ -613,7 +613,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 Rex('vNode', function (_ref) {
 	var vChildNodes = _ref.vChildNodes;
 	var vProperties = _ref.vProperties;
-	return(
+	return (
 
 		/**
    * Abstracao de um HTMLElement (Virtual HTMLElement)
@@ -627,7 +627,7 @@ Rex('vNode', function (_ref) {
 
 Rex('vProperties', function (_ref) {
 	var isObject = _ref.isObject;
-	return(
+	return (
 
 		/**
    * Verifica se a properiedade e um objeto, caso contratio
@@ -641,7 +641,7 @@ Rex('vProperties', function (_ref) {
 'use strict';
 
 Rex('vReflow', function (r) {
-	return(
+	return (
 
 		/**
    * Atualiza a arvore do DOM com base na arvore do
@@ -657,7 +657,7 @@ Rex('vReflow', function (r) {
 'use strict';
 
 Rex('vRemoveNode', function () {
-	return(
+	return (
 
 		/**
    * Remove o elemento real da arvore do DOM
@@ -675,7 +675,7 @@ Rex('vRender', function (_ref) {
 	var isVText = _ref.isVText;
 	var vCreateNode = _ref.vCreateNode;
 	var vCreateText = _ref.vCreateText;
-	return(
+	return (
 
 		/**
    * Com um vNode (Virtual DOM), transpila/renderiza a especificacao para um
@@ -697,7 +697,7 @@ Rex('vRepaint', function (_ref) {
 	var vExtendNode = _ref.vExtendNode;
 	var vRemoveNode = _ref.vRemoveNode;
 	var vReplaceNode = _ref.vReplaceNode;
-	return(
+	return (
 
 		/**
    * Identifica a manipulacao correspondente para atualizar
@@ -718,7 +718,7 @@ Rex('vRepaint', function (_ref) {
 
 Rex('vReplaceNode', function (_ref) {
 	var vRender = _ref.vRender;
-	return(
+	return (
 
 		/**
    * Troca o elemento Node real por um novo elemento
@@ -734,7 +734,7 @@ Rex('vReplaceNode', function (_ref) {
 Rex('vTag', function (_ref) {
   var reduce = _ref.reduce;
   var vNode = _ref.vNode;
-  return(
+  return (
 
     /**
      * Colecao de todos Elementos HTML
@@ -757,7 +757,7 @@ Rex('vTag', function (_ref) {
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 Rex('vText', function () {
-	return(
+	return (
 
 		/**
    * Abstracao de um Text Node (Virtual HTMLElement)

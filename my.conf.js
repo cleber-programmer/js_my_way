@@ -36,7 +36,7 @@ module.exports = function(config) {
 
     // the reporter defaults to the following value
     coverageReporter: {
-      reporters:[
+      reporters: [
         { type: 'html', dir:'coverage/' },
         { type: 'text' }
       ],
