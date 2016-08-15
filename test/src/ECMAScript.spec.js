@@ -26,6 +26,18 @@ describe('ECMAScript', () => {
 
   });
 
+  it('Teste da funcao codePointAt', () => {
+
+    Rex(({ codePointAt }) => {
+      expect(codePointAt('ABC', -1)).toEqual(undefined);
+      expect(codePointAt('ABC', 0)).toBe(65);
+      expect(codePointAt('ABC', 1)).toBe(66);
+      expect(codePointAt('ABC', 2)).toBe(67);
+      expect(codePointAt('ABC', 999)).toEqual(undefined);
+    });
+
+  });
+
   afterEach(window.onload);
 
 });
