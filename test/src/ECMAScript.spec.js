@@ -1,6 +1,6 @@
 describe('ECMAScript', () => {
 
-  it('Teste da funcao charAt', () => {
+  it('Devolve o carccter definido a partir de uma string', () => {
 
     Rex(({ charAt }) => {
       expect(charAt('Brave new world', -1)).toBe('');
@@ -14,7 +14,7 @@ describe('ECMAScript', () => {
 
   });
 
-  it('Teste da funcao charCodeAt', () => {
+  it('Retorna um inteiro entre 0 e 65535 que representa a unidade de UTF-16 codigo no indice fornecido', () => {
 
     Rex(({ charCodeAt }) => {
       expect(charCodeAt('ABC', -1)).toEqual(NaN);
@@ -26,14 +26,25 @@ describe('ECMAScript', () => {
 
   });
 
-  it('Teste da funcao codePointAt', () => {
+  it('Retorna um inteiro nao negativo que é o valor do ponto de codigo Unicode', () => {
 
     Rex(({ codePointAt }) => {
-      expect(codePointAt('ABC', -1)).toEqual(undefined);
+      expect(codePointAt('ABC', -1)).toBe(undefined);
       expect(codePointAt('ABC', 0)).toBe(65);
       expect(codePointAt('ABC', 1)).toBe(66);
       expect(codePointAt('ABC', 2)).toBe(67);
-      expect(codePointAt('ABC', 999)).toEqual(undefined);
+      expect(codePointAt('ABC', 999)).toBe(undefined);
+    });
+
+  });
+
+  it('Combina o texto de duas ou mais strings e retorna uma nova string', (done) => {
+
+    Rex(({ concat }) => {
+      expect(concat('A')).toBe('A');
+      expect(concat('A', 'B')).toBe('AB');
+      expect(concat('A', 'B', 'C')).toBe('ABC');
+      done();
     });
 
   });
