@@ -38,13 +38,45 @@ describe('ECMAScript', () => {
 
   });
 
-  it('Combina o texto de duas ou mais strings e retorna uma nova string', (done) => {
+  it('Combina o texto de duas ou mais strings e retorna uma nova string', () => {
 
     Rex(({ concat }) => {
       expect(concat('A')).toBe('A');
       expect(concat('A', 'B')).toBe('AB');
       expect(concat('A', 'B', 'C')).toBe('ABC');
-      done();
+    });
+
+  });
+
+  it('Retorna uma nova matriz composta com o valor(es) fornecido como argumentos', () => {
+
+    Rex(({ concat }) => {
+      expect(concat([1, 2, 3])).toEqual([1, 2, 3]);
+      expect(concat([1, 2, 3], 4)).toEqual([1, 2, 3, 4]);
+      expect(concat([1, 2, 3], 4, 5)).toEqual([1, 2, 3, 4, 5]);
+      expect(concat([1, 2, 3], [4])).toEqual([1, 2, 3, 4]);
+      expect(concat([1, 2, 3], [4, 5])).toEqual([1, 2, 3, 4, 5]);
+    });
+
+  });
+
+  it('Copias de uma matriz para outro local na mesma matriz e retorna sem modificar seu tamanho', () => {
+
+    Rex(({ copyWithin }) => {
+      expect(copyWithin([1, 2, 3, 4, 5], -2)).toEqual([1, 2, 3, 1, 2]);
+      expect(copyWithin([1, 2, 3, 4, 5], 0, 3)).toEqual([4, 5, 3, 4, 5]);
+      expect(copyWithin([1, 2, 3, 4, 5], 0, 3, 4)).toEqual([4, 2, 3, 4, 5]);
+      expect(copyWithin([1, 2, 3, 4, 5], -2, -3, -1)).toEqual([1, 2, 3, 3, 4]);
+    });
+
+  });
+
+  it('Modulo determina se uma sequencia termina com os personagens de outra sequencia, retornando verdadeiro ou falso, conforme apropriado', () => {
+
+    Rex(({ endsWith }) => {
+      expect(endsWith('To be, or not to be, that is the question.', 'question.')).toBe(true);
+      expect(endsWith('To be, or not to be, that is the question.', 'to be')).toBe(false);
+      expect(endsWith('To be, or not to be, that is the question.', 'to be', 19)).toBe(true);
     });
 
   });
