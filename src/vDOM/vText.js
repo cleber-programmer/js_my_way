@@ -1,4 +1,4 @@
-Rex('vText', () => 
+Rex('vText', () =>
 
 	/**
 	 * Abstracao de um Text Node (Virtual HTMLElement)
