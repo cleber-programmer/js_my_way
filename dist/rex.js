@@ -611,6 +611,7 @@ Rex('vExtendTextContent', function (_ref) {
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 Rex('vNode', function (_ref) {
+	var toUpperCase = _ref.toUpperCase;
 	var vChildNodes = _ref.vChildNodes;
 	var vProperties = _ref.vProperties;
 	return (
@@ -619,7 +620,7 @@ Rex('vNode', function (_ref) {
    * Abstracao de um HTMLElement (Virtual HTMLElement)
    */
 		function (tagName, properties, childNodes) {
-			return _defineProperty({ tagName: tagName, properties: vProperties(properties), childNodes: vChildNodes(childNodes, properties), nodeType: 1 }, Symbol.toStringTag, 'vNode');
+			return _defineProperty({ tagName: toUpperCase(tagName), properties: vProperties(properties), childNodes: vChildNodes(childNodes, properties), nodeType: 1 }, Symbol.toStringTag, 'vNode');
 		}
 	);
 });
@@ -708,7 +709,7 @@ Rex('vRepaint', function (_ref) {
 		}, vRemoveNode], [function (node, vNode) {
 			return and(not(node), !!vNode);
 		}, vAppendNode], [function (node, vNode) {
-			return different(node.nodeType, vNode.nodeType);
+			return different(node.tagName, vNode.tagName);
 		}, vReplaceNode], [function (node, vNode) {
 			return t;
 		}, vExtendNode])
@@ -724,8 +725,8 @@ Rex('vReplaceNode', function (_ref) {
    * Troca o elemento Node real por um novo elemento
    * criado virtual
    */
-		function (node, vNode, parentNode) {
-			return parentNode.replaceChild(vRender(vNode), node);
+		function (node, vNode) {
+			return node.parentNode.replaceChild(vRender(vNode), node);
 		}
 	);
 });

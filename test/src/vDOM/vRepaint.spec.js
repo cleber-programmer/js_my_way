@@ -2,10 +2,8 @@ describe('vDOM', () => {
 
   describe('vRepaint', () => {
 
-    let fruits;
-
     beforeEach(() =>
-      fruits = document.createElement('table'));
+      (document.body.innerHTML = '<table id="fruits"></table>'));
 
     it('Verificando a existencia do modulo vRepaint', () => {
 
@@ -16,13 +14,23 @@ describe('vDOM', () => {
 
     it('Extendendo um tag html', () => {
 
-      Rex(({ vRepaint, vTag: { table } }) => {
+      Rex(({ vRepaint, vTag: { table }, $ }) => {
 
-        vRepaint(fruits, table());
-        
-        expect(fruits.tagName).toBe('TABLE');
-        expect(fruits.childNodes.length).toEqual(0);
-        expect(fruits.innerHTML).toBe('');
+        vRepaint($('#fruits'), table());        
+        expect($('#fruits').tagName).toBe('TABLE');
+
+      });
+
+    });
+
+    it('Substituindo um tag html', () => {
+
+      Rex(({ vRepaint, vTag: { tr }, $ }) => {
+
+        $('#fruits').appendChild(document.createElement('div'));
+
+        vRepaint($('#fruits div'), tr());
+        expect($('#fruits tr').tagName).toBe('TR');
 
       });
 

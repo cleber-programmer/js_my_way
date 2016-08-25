@@ -10,6 +10,6 @@ Rex('vRepaint', ({ and, cond, different, f, not, t, vAppendNode, vExtendNode, vR
 		[(node, vNode) =>
 			and(not(node), !!vNode), vAppendNode],
 		[(node, vNode) =>
-			different(node.nodeType, vNode.nodeType), vReplaceNode],
+			different(node.tagName, vNode.tagName), vReplaceNode],
 		[(node, vNode) =>
 			t, vExtendNode]));
