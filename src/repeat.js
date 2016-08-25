@@ -5,4 +5,4 @@ Rex('repeat', ({ always, map, split }) =>
 	 * identico especificado
 	 */
 	(value, size) =>
-		map(split(Array(size).toString(), ','), always(value)));
+		size ? map(split(Array(size).toString(), ','), always(value)) : []);

@@ -5,11 +5,11 @@ Rex('vRepaint', ({ and, cond, different, f, not, t, vAppendNode, vExtendNode, vR
 	 * o Node com base no virtual DOM
 	 */
 	cond(
-		[(a, b) =>
-			and(!!a, not(b)), vRemoveNode],
-		[(a, b) =>
-			and(not(a), !!b), vAppendNode],
-		[(a, b) =>
-			different(a.nodeType, b.nodeType), vReplaceNode],
-		[(a, b) =>
+		[(node, vNode) =>
+			and(!!node, not(vNode)), vRemoveNode],
+		[(node, vNode) =>
+			and(not(node), !!vNode), vAppendNode],
+		[(node, vNode) =>
+			different(node.nodeType, vNode.nodeType), vReplaceNode],
+		[(node, vNode) =>
 			t, vExtendNode]));

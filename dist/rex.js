@@ -418,7 +418,7 @@ Rex('repeat', function (_ref) {
    * identico especificado
    */
 		function (value, size) {
-			return map(split(Array(size).toString(), ','), always(value));
+			return size ? map(split(Array(size).toString(), ','), always(value)) : [];
 		}
 	);
 });
@@ -703,13 +703,13 @@ Rex('vRepaint', function (_ref) {
    * Identifica a manipulacao correspondente para atualizar
    * o Node com base no virtual DOM
    */
-		cond([function (a, b) {
-			return and(!!a, not(b));
-		}, vRemoveNode], [function (a, b) {
-			return and(not(a), !!b);
-		}, vAppendNode], [function (a, b) {
-			return different(a.nodeType, b.nodeType);
-		}, vReplaceNode], [function (a, b) {
+		cond([function (node, vNode) {
+			return and(!!node, not(vNode));
+		}, vRemoveNode], [function (node, vNode) {
+			return and(not(node), !!vNode);
+		}, vAppendNode], [function (node, vNode) {
+			return different(node.nodeType, vNode.nodeType);
+		}, vReplaceNode], [function (node, vNode) {
 			return t;
 		}, vExtendNode])
 	);
