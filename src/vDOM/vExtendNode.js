@@ -1,3 +1,6 @@
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('vExtendNode', ({ compose, cond, isVNode, isVText, vExtendProperty, vExtendTextContent, vReflow, _ }) =>
 
 	/**

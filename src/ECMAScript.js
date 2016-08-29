@@ -1,3 +1,6 @@
+/* global Rex */
+/* jshint esversion: 6 */
+
 (() => {
 
   [
@@ -77,6 +80,6 @@
    */
   ].forEach(
     (method) =>
-        Rex(method, () => (object, ...parameters) => object[method](...parameters)))
+        Rex(method, () => (object, ...parameters) => object[method](...parameters)));
 
 })();

@@ -1,3 +1,6 @@
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('vAppendChild', (r) => 
 
 	/**
@@ -8,4 +11,4 @@ Rex('vAppendChild', (r) =>
 		(node, vNode) => {
 			return r.forEach(vNode.childNodes,
 				(vChild) =>
-					node.appendChild(r.vRender(vChild))), node }));
+					node.appendChild(r.vRender(vChild))), node; }));

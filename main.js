@@ -1,10 +1,12 @@
+/* jshint esversion: 6 */
+
 ((modules, target) => {  
   Object.assign(window, {
 
-  	/**
-  	 * Baseado no Sandbox Pattern, um tipo de caixa preta onde registra e consome modulos
-		 * atraves de getter e setter
-  	 */
+    /**
+     * Baseado no Sandbox Pattern, um tipo de caixa preta onde registra e consome modulos
+     * atraves de getter e setter
+     */
     Rex: (nameOrModule, module) => module ? target[nameOrModule] = module : modules.push(nameOrModule),
 
     /**

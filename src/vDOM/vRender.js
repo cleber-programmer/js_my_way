@@ -1,3 +1,6 @@
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('vRender', ({ cond, isVNode, isVText, vCreateNode, vCreateText }) => 
 
 	/**

@@ -1,3 +1,6 @@
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('cond', () =>
 
 	/**
@@ -6,4 +9,4 @@ Rex('cond', () =>
 	 */
 	(...handlers) =>
 		(...parameters) => {
-			for(let [chain, responsibility] of handlers) if(chain(...parameters)) return responsibility(...parameters) });
+			for(let [chain, responsibility] of handlers) if(chain(...parameters)) return responsibility(...parameters); });

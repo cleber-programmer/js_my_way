@@ -1,11 +1,13 @@
 'use strict';
 
+/* jshint esversion: 6 */
+
 (function (modules, target) {
   Object.assign(window, {
 
     /**
      * Baseado no Sandbox Pattern, um tipo de caixa preta onde registra e consome modulos
-    * atraves de getter e setter
+     * atraves de getter e setter
      */
     Rex: function Rex(nameOrModule, module) {
       return module ? target[nameOrModule] = module : modules.push(nameOrModule);
@@ -34,19 +36,25 @@
 }));
 'use strict';
 
-Rex('$', function () {
-	return (
+/* global Rex */
+/* jshint esversion: 6 */
 
-		/**
-   * Retorna o primeiro elemento dentro do documento que corresponde
-   * ao grupo especificado de seletores
-   */
-		function (selector) {
-			return document.querySelector(selector);
-		}
-	);
+Rex('$', function () {
+  return (
+
+    /**
+     * Retorna o primeiro elemento dentro do documento que corresponde
+     * ao grupo especificado de seletores
+     */
+    function (selector) {
+      return document.querySelector(selector);
+    }
+  );
 });
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('always', function () {
 	return (
@@ -65,6 +73,9 @@ Rex('always', function () {
 });
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('apply', function () {
 	return (
 
@@ -79,6 +90,9 @@ Rex('apply', function () {
 });
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('assign', function () {
 	return (
 
@@ -92,6 +106,9 @@ Rex('assign', function () {
 	);
 });
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('compose', function (_ref) {
 	var apply = _ref.apply;
@@ -125,6 +142,9 @@ Rex('compose', function (_ref) {
 'use strict';
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('cond', function () {
 	return (
@@ -171,6 +191,9 @@ Rex('cond', function () {
 });
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('contains', function (_ref) {
 	var different = _ref.different;
 	var indexOf = _ref.indexOf;
@@ -186,6 +209,9 @@ Rex('contains', function (_ref) {
 	);
 });
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('curry', function (_ref) {
 	var apply = _ref.apply;
@@ -213,6 +239,9 @@ Rex('curry', function (_ref) {
 });
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('defaultTo', function (_ref) {
 	var curry = _ref.curry;
 	var or = _ref.or;
@@ -228,6 +257,9 @@ Rex('defaultTo', function (_ref) {
 	);
 });
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 (function () {
 
@@ -255,6 +287,9 @@ Rex('defaultTo', function (_ref) {
 })();
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('f', function (_ref) {
 	var always = _ref.always;
 	return (
@@ -267,6 +302,9 @@ Rex('f', function (_ref) {
 	);
 });
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('getter', function (_ref) {
 	var or = _ref.or;
@@ -284,6 +322,9 @@ Rex('getter', function (_ref) {
 'use strict';
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 (function () {
   return [
@@ -311,6 +352,9 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 })();
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('mapFormat', function (_ref) {
 	var and = _ref.and;
 	var equal = _ref.equal;
@@ -331,6 +375,9 @@ Rex('mapFormat', function (_ref) {
 });
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('max', function () {
 	return (
 
@@ -341,6 +388,9 @@ Rex('max', function () {
 	);
 });
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('not', function () {
 	return (
@@ -356,6 +406,10 @@ Rex('not', function () {
 'use strict';
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+/* global Rex */
+/* jshint esversion: 6 */
+/* jshint -W061 */
 
 (function () {
 
@@ -380,6 +434,9 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
   });
 })();
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('partial', function (_ref) {
 	var apply = _ref.apply;
@@ -407,6 +464,9 @@ Rex('partial', function (_ref) {
 });
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('repeat', function (_ref) {
 	var always = _ref.always;
 	var map = _ref.map;
@@ -424,6 +484,9 @@ Rex('repeat', function (_ref) {
 });
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('t', function (_ref) {
 	var always = _ref.always;
 	return (
@@ -436,6 +499,9 @@ Rex('t', function (_ref) {
 	);
 });
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('test', function () {
 	return (
@@ -451,6 +517,9 @@ Rex('test', function () {
 });
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('UUID', function () {
 	return (
 
@@ -464,18 +533,24 @@ Rex('UUID', function () {
 });
 'use strict';
 
-Rex('_', function (_ref) {
-	var UUID = _ref.UUID;
-	return (
+/* global Rex */
+/* jshint esversion: 6 */
 
-		/**
-   * Retorna um valor unico que sera utilizado
-   * como um Gap
-   */
-		UUID()
-	);
+Rex('_', function (_ref) {
+  var UUID = _ref.UUID;
+  return (
+
+    /**
+     * Retorna um valor unico que sera utilizado
+     * como um Gap
+     */
+    UUID()
+  );
 });
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('vAppendChild', function (r) {
 	return (
@@ -493,6 +568,9 @@ Rex('vAppendChild', function (r) {
 });
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('vAppendNode', function (_ref) {
 	var vAppendChild = _ref.vAppendChild;
 	return (
@@ -506,6 +584,9 @@ Rex('vAppendNode', function (_ref) {
 	);
 });
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('vChildNodes', function (_ref) {
 	var concat = _ref.concat;
@@ -525,6 +606,9 @@ Rex('vChildNodes', function (_ref) {
 });
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('vCreateNode', function (_ref) {
 	var compose = _ref.compose;
 	var vAppendChild = _ref.vAppendChild;
@@ -543,6 +627,9 @@ Rex('vCreateNode', function (_ref) {
 });
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('vCreateText', function () {
 	return (
 
@@ -555,6 +642,9 @@ Rex('vCreateText', function () {
 	);
 });
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('vExtendNode', function (_ref) {
 	var compose = _ref.compose;
@@ -577,6 +667,9 @@ Rex('vExtendNode', function (_ref) {
 });
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('vExtendProperty', function (_ref) {
 	var curry = _ref.curry;
 	var assign = _ref.assign;
@@ -592,6 +685,9 @@ Rex('vExtendProperty', function (_ref) {
 	);
 });
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('vExtendTextContent', function (_ref) {
 	var curry = _ref.curry;
@@ -610,6 +706,9 @@ Rex('vExtendTextContent', function (_ref) {
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('vNode', function (_ref) {
 	var toUpperCase = _ref.toUpperCase;
 	var vChildNodes = _ref.vChildNodes;
@@ -626,6 +725,9 @@ Rex('vNode', function (_ref) {
 });
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('vProperties', function (_ref) {
 	var isObject = _ref.isObject;
 	return (
@@ -640,6 +742,9 @@ Rex('vProperties', function (_ref) {
 	);
 });
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('vReflow', function (r) {
 	return (
@@ -657,6 +762,9 @@ Rex('vReflow', function (r) {
 });
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('vRemoveNode', function () {
 	return (
 
@@ -669,6 +777,9 @@ Rex('vRemoveNode', function () {
 	);
 });
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('vRender', function (_ref) {
 	var cond = _ref.cond;
@@ -686,6 +797,9 @@ Rex('vRender', function (_ref) {
 	);
 });
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('vRepaint', function (_ref) {
 	var and = _ref.and;
@@ -717,6 +831,9 @@ Rex('vRepaint', function (_ref) {
 });
 'use strict';
 
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('vReplaceNode', function (_ref) {
 	var vRender = _ref.vRender;
 	return (
@@ -731,6 +848,9 @@ Rex('vReplaceNode', function (_ref) {
 	);
 });
 'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('vTag', function (_ref) {
   var reduce = _ref.reduce;
@@ -756,6 +876,9 @@ Rex('vTag', function (_ref) {
 'use strict';
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+/* global Rex */
+/* jshint esversion: 6 */
 
 Rex('vText', function () {
 	return (

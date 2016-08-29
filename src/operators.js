@@ -1,3 +1,7 @@
+/* global Rex */
+/* jshint esversion: 6 */
+/* jshint -W061 */
+
 (() => {
 
   [
@@ -24,6 +28,6 @@
    */
   ].forEach(
     ([name, operator]) =>
-      Rex(name, () => Function(...['a', 'b', `return a ${operator} b`])))
+      Rex(name, () => Function(...['a', 'b', `return a ${operator} b`])));
 
 })();

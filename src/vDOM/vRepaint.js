@@ -1,3 +1,6 @@
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('vRepaint', ({ and, cond, different, f, not, t, vAppendNode, vExtendNode, vRemoveNode, vReplaceNode }) =>
 
 	/**

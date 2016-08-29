@@ -1,3 +1,6 @@
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('vNode', ({ toUpperCase, vChildNodes, vProperties }) =>
 
 	/**
