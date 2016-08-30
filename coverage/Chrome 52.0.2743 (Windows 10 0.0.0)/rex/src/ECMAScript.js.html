@@ -85,46 +85,13 @@
 40
 41
 42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+43</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -158,133 +125,49 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2962×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(() =&gt; {
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* global Rex */
+/* jshint esversion: 6 */
 &nbsp;
+(() =&gt; {
+&nbsp;
+  /**
+   * Colecao de metodos dos objetos Array, Number, Object e String
+   */
   [
 &nbsp;
-    /**
-     * Colecao de metodos dos objetos Array, Number, Object e String
-     */
-    'charAt',
-    'charCodeAt',
-    'codePointAt',
-    'concat',
-    'copyWithin',
-    'endsWith',
-    'entries',
-    'every',
-    'fill',
-    'filter',
-    'find',
-    'findIndex',
-    'fixed',
-    'fontcolor',
-    'fontsize',
-    'forEach',
-    'hasOwnProperty',
-    'includes',
-    'indexOf',
-    'isPrototypeOf',
-    'italics',
-    'join',
-    'keys',
-    'lastIndexOf',
-    'link',
-    'localeCompare',
-    'map',
-    'match',
-    'normalize',
-    'pop',
-    'propertyIsEnumerable',
-    'push',
-    'reduce',
-    'reduceRight',
-    'repeat',
-    'replace',
-    'reverse',
-    'search',
-    'shift',
-    'slice',
-    'small',
-    'some',
-    'sort',
-    'splice',
-    'split',
-    'startsWith',
-    'strike',
-    'sub',
-    'substr',
-    'substring',
-    'sup',
-    'toExponential',
-    'toFixed',
-    'toLocaleLowerCase',
-    'toLocaleString',
-    'toLocaleUpperCase',
-    'toLowerCase',
-    'toPrecision',
-    'toString',
-    'toUpperCase',
-    'trim',
-    'trimLeft',
-    'trimRight',
-    'unshift',
-    'valueOf',
-    'values'
+    'charAt',           'endsWith',       'fill',                       'hasOwnProperty',         'includes',             'join',                   'keys',           'lastIndexOf',
+    'charCodeAt',       'entries',        'filter',                                               'indexOf',                                                          'link',
+    'codePointAt',      'every',          'find',                                                 'isPrototypeOf',                                                    'localeCompare',
+    'concat',                             'findIndex',                                            'italics',
+    'copyWithin',                         'fixed',
+                                          'fontcolor',
+                                          'fontsize',
+                                          'forEach',
+&nbsp;
+&nbsp;
+    'map',              'normalize',      'pop',                        'reduce',                 'search',               'toExponential',          'unshift',        'valueOf',
+    'match',                              'propertyIsEnumerable',       'reduceRight',            'shift',                'toFixed',                                  'values',
+                                          'push',                       'repeat',                 'slice',                'toLocaleLowerCase',
+                                                                        'replace',                'small',                'toLocaleString',
+                                                                        'reverse',                'some',                 'toLocaleUpperCase',
+                                                                                                  'sort',                 'toLowerCase',
+                                                                                                  'splice',               'toPrecision',
+                                                                                                  'split',                'toString',
+                                                                                                  'startsWith',           'toUpperCase',
+                                                                                                  'strike',               'trim',
+                                                                                                  'sub',                  'trimLeft',
+                                                                                                  'substr',               'trimRight',
+                                                                                                  'substring',
+                                                                                                  'sup',
 &nbsp;
   /**
    * Construtor de modulos com metodos da colecao acima
    */
   ].forEach(
     (method) =&gt;
-        Rex(method, () =&gt; (object, ...parameters) =&gt; object[method](...parameters)))
+        Rex(method, () =&gt; (object, ...parameters) =&gt; object[method](...parameters)));
 &nbsp;
 })();</pre></td></tr>
 </table></pre>
@@ -292,7 +175,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Aug 29 2016 10:23:35 GMT-0300 (Hora oficial do Brasil)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Aug 30 2016 11:14:30 GMT-0300 (Hora oficial do Brasil)
 </div>
 </div>
 <script src="../../prettify.js"></script>

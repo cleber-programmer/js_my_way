@@ -263,17 +263,10 @@ Rex('defaultTo', function (_ref) {
 
 (function () {
 
-  [
-
   /**
    * Colecao de metodos dos objetos Array, Number, Object e String
    */
-  'charAt', 'charCodeAt', 'codePointAt', 'concat', 'copyWithin', 'endsWith', 'entries', 'every', 'fill', 'filter', 'find', 'findIndex', 'fixed', 'fontcolor', 'fontsize', 'forEach', 'hasOwnProperty', 'includes', 'indexOf', 'isPrototypeOf', 'italics', 'join', 'keys', 'lastIndexOf', 'link', 'localeCompare', 'map', 'match', 'normalize', 'pop', 'propertyIsEnumerable', 'push', 'reduce', 'reduceRight', 'repeat', 'replace', 'reverse', 'search', 'shift', 'slice', 'small', 'some', 'sort', 'splice', 'split', 'startsWith', 'strike', 'sub', 'substr', 'substring', 'sup', 'toExponential', 'toFixed', 'toLocaleLowerCase', 'toLocaleString', 'toLocaleUpperCase', 'toLowerCase', 'toPrecision', 'toString', 'toUpperCase', 'trim', 'trimLeft', 'trimRight', 'unshift', 'valueOf', 'values'
-
-  /**
-   * Construtor de modulos com metodos da colecao acima
-   */
-  ].forEach(function (method) {
+  ['charAt', 'endsWith', 'fill', 'hasOwnProperty', 'includes', 'join', 'keys', 'lastIndexOf', 'charCodeAt', 'entries', 'filter', 'indexOf', 'link', 'codePointAt', 'every', 'find', 'isPrototypeOf', 'localeCompare', 'concat', 'findIndex', 'italics', 'copyWithin', 'fixed', 'fontcolor', 'fontsize', 'forEach', 'map', 'normalize', 'pop', 'reduce', 'search', 'toExponential', 'unshift', 'valueOf', 'match', 'propertyIsEnumerable', 'reduceRight', 'shift', 'toFixed', 'values', 'push', 'repeat', 'slice', 'toLocaleLowerCase', 'replace', 'small', 'toLocaleString', 'reverse', 'some', 'toLocaleUpperCase', 'sort', 'toLowerCase', 'splice', 'toPrecision', 'split', 'toString', 'startsWith', 'toUpperCase', 'strike', 'trim', 'sub', 'trimLeft', 'substr', 'trimRight', 'substring', 'sup'].forEach(function (method) {
     return Rex(method, function () {
       return function (object) {
         for (var _len = arguments.length, parameters = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -860,7 +853,7 @@ Rex('vTag', function (_ref) {
     /**
      * Colecao de todos Elementos HTML
      */
-    reduce(['a', 'abbr', 'acronym', 'address', 'applet', 'area', 'article', 'aside', 'audio', 'b', 'base', 'basefont', 'bdi', 'bdo', 'bgsound', 'big', 'blink', 'blockquote', 'body', 'br', 'button', 'canvas', 'caption', 'center', 'cite', 'code', 'col', 'colgroup', 'command', 'data', 'datalist', 'dd', 'del', 'details', 'dfn', 'dir', 'div', 'dl', 'dt', 'em', 'embed', 'fieldset', 'figcaption', 'figure', 'font', 'footer', 'form', 'frame', 'frameset', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hgroup', 'hr', 'html', 'i', 'iframe', 'img', 'input', 'ins', 'isindex', 'kbd', 'keygen', 'label', 'legend', 'li', 'link', 'listing', 'main', 'map', 'mark', 'marquee', 'menu', 'meta', 'meter', 'nav', 'nobr', 'noframes', 'noscript', 'object', 'ol', 'optgroup', 'option', 'output', 'p', 'param', 'plaintext', 'pre', 'progress', 'q', 'rp', 'rt', 'ruby', 's', 'samp', 'script', 'section', 'select', 'small', 'source', 'spacer', 'span', 'strike', 'strong', 'style', 'sub', 'summary', 'sup', 'table', 'tbody', 'td', 'textarea', 'tfoot', 'th', 'thead', 'time', 'title', 'tr', 'track', 'tt', 'u', 'ul', 'var', 'video', 'wbr', 'xmp'],
+    reduce(['a', 'b', 'canvas', 'data', 'em', 'fieldset', 'h1', 'i', 'kbd', 'label', 'main', 'abbr', 'base', 'caption', 'datalist', 'embed', 'figcaption', 'h2', 'iframe', 'keygen', 'legend', 'map', 'acronym', 'basefont', 'center', 'dd', 'figure', 'h3', 'img', 'li', 'mark', 'address', 'bdi', 'cite', 'del', 'font', 'h4', 'input', 'link', 'marquee', 'applet', 'bdo', 'code', 'details', 'footer', 'h5', 'ins', 'listing', 'menu', 'area', 'bgsound', 'col', 'dfn', 'form', 'h6', 'isindex', 'meta', 'article', 'big', 'colgroup', 'dir', 'frame', 'head', 'meter', 'aside', 'blink', 'command', 'div', 'frameset', 'header', 'audio', 'blockquote', 'dl', 'hgroup', 'body', 'dt', 'hr', 'br', 'html', 'button', 'nav', 'object', 'p', 'q', 'rp', 's', 'table', 'u', 'var', 'wbr', 'xmp', 'nobr', 'ol', 'param', 'rt', 'samp', 'tbody', 'ul', 'video', 'noframes', 'optgroup', 'plaintext', 'ruby', 'script', 'td', 'noscript', 'option', 'pre', 'section', 'textarea', 'output', 'progress', 'select', 'tfoot', 'small', 'th', 'source', 'thead', 'spacer', 'time', 'span', 'title', 'strike', 'tr', 'strong', 'track', 'style', 'tt', 'sub', 'summary', 'sup'],
 
     /**
      * Criacao de helpers para facilitar a utilizacao do hScript e/ou melhorar
