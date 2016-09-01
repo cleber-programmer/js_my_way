@@ -1,15 +1,40 @@
 describe('ECMAScript', () => {
 
-  it('Devolve o carccter definido a partir de uma string', () => {
+  describe('charAt', () => {
 
-    Rex(({ charAt }) => {
-      expect(charAt('Brave new world', -1)).toBe('');
-      expect(charAt('Brave new world', 0)).toBe('B');
-      expect(charAt('Brave new world', 1)).toBe('r');
-      expect(charAt('Brave new world', 2)).toBe('a');
-      expect(charAt('Brave new world', 3)).toBe('v');
-      expect(charAt('Brave new world', 4)).toBe('e');
-      expect(charAt('Brave new world', 999)).toBe('');
+    it('Passado o index -1 deve retornar um literal vazio', () => {
+
+      Rex(({ charAt }) => {
+        expect(charAt('Brave new world', -1)).toBe('')});
+
+    });
+
+    it('Passado o index 0 deve retornar a primeira letra do literal', () => {
+
+      Rex(({ charAt }) => {
+        expect(charAt('Brave new world', 0)).toBe('B')});
+
+    });
+
+    it('Passado o index 1 deve retornar a segunda letra do literal', () => {
+
+      Rex(({ charAt }) => {
+        expect(charAt('Brave new world', 1)).toBe('r')});
+
+    });
+
+    it('Passado o index 2 deve retornar a terceira letra do literal', () => {
+
+      Rex(({ charAt }) => {
+        expect(charAt('Brave new world', 2)).toBe('a')});
+
+    });
+
+    it('Passado o index 999 deve retornar um literal vazio', () => {
+
+      Rex(({ charAt }) => {
+        expect(charAt('Brave new world', 999)).toBe('')});
+
     });
 
   });

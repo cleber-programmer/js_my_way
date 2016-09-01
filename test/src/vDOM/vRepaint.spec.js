@@ -124,7 +124,7 @@ describe('vDOM', () => {
 
       Rex(({ vRepaint, vTag: { table, td, th, tr }, vText, $ }) => {
 
-        vRepaint($('#fruits'), table({ id: 'new_id' }, [
+        vRepaint($('#fruits'), table({ className: 'classA' }, [
           th([
             td(vText('letter')),
             td(vText('fruit'))
@@ -143,8 +143,7 @@ describe('vDOM', () => {
           ])
         ]));
 
-        expect($('#fruits')).toBe(null);
-        expect($('#new_id')).toBeDefined();
+        expect($('#fruits').className).toBe('classA');
 
       });
 

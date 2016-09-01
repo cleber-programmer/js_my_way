@@ -1,7 +1,7 @@
 /* global Rex */
 /* jshint esversion: 6 */
 
-Rex('vRepaint', ({ and, cond, different, f, not, t, vAppendNode, vExtendNode, vRemoveNode, vReplaceNode }) =>
+Rex('vRepaint', ({ and, cond, different, not, t, vAppendNode, vExtendNode, vRemoveNode, vReplaceNode }) =>
 
 	/**
 	 * Identifica a manipulacao correspondente para atualizar
