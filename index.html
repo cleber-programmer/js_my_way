@@ -6,16 +6,35 @@
 <body>
 
   <div id="rex"></div>
+  <x-fruit></x-fruit>
 
   <script src="dist/rex.js"></script>
   <script>
 
-   Rex(({ vRepaint, vTag: { div, span }, vText, $ }) =>
+    Rex(({ vRepaint, vTag: { table, td, th, tr }, vText, $ }) => {
     
       vRepaint($('#rex'),
-        div([
-          span(vText('Ola mundo JavaScript')),
-          vText(';D')])));
+        table([
+          tr([
+            th(vText('Letter')),
+            th(vText('Fruit'))]),
+          tr([
+            td(vText('a')),
+            td(vText('Apple'))]),
+          tr([
+            td(vText('b')),
+            td(vText('Banana'))]),
+          tr([
+            td(vText('c')),
+            td(vText('Cherry'))]),
+          tr([
+            td(vText('d')),
+            td(vText('Durian'))]),
+          tr([
+            td(vText('e')),
+            td(vText('Elder Berry'))])]));
+
+    });
 
   </script>
 </body>

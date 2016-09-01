@@ -39,15 +39,16 @@
 /* global Rex */
 /* jshint esversion: 6 */
 
-Rex('$', function () {
+Rex('$', function (_ref) {
+  var or = _ref.or;
   return (
 
     /**
      * Retorna o primeiro elemento dentro do documento que corresponde
      * ao grupo especificado de seletores
      */
-    function (selector) {
-      return document.querySelector(selector);
+    function (element, selector) {
+      return (selector ? element : document).querySelector(or(selector, element));
     }
   );
 });
@@ -213,6 +214,23 @@ Rex('contains', function (_ref) {
 /* global Rex */
 /* jshint esversion: 6 */
 
+Rex('cTag', function () {
+  return (
+
+    /**
+     * Elemento personalizado é um costume tag HTML e/ou elemento que nos dá a ferramenta para ampliar
+     * o vocabulário do HTML e em ensinar novos truques
+     */
+    function (name, classElement) {
+      return document.registerElement(name, classElement);
+    }
+  );
+});
+'use strict';
+
+/* global Rex */
+/* jshint esversion: 6 */
+
 Rex('curry', function (_ref) {
 	var apply = _ref.apply;
 	var contains = _ref.contains;
@@ -237,7 +255,6 @@ Rex('curry', function (_ref) {
 		}
 	);
 });
-"use strict";
 'use strict';
 
 /* global Rex */
@@ -276,7 +293,6 @@ Rex('f', function (_ref) {
 		always(!1)
 	);
 });
-"use strict";
 'use strict';
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
