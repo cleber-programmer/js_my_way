@@ -1,6 +1,6 @@
 {
   "name": "Rex",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "JavaScript é como uma folha em branco – \"A liberdade de programar do jeito que faça sentido pra você!\"",
   "main": "main.js",
   "scripts": {
@@ -10,12 +10,13 @@
   },
   "keywords": [],
   "author": "Cleber de Moraes Gonçalves <cleber.programmer@hotmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-preset-es2015": "^6.9.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^2.0.0",
     "jasmine-core": "^2.4.1",
     "karma": "^1.1.2",
     "karma-babel-preprocessor": "^6.0.1",

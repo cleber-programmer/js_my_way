@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cleber-programmer/rex.svg?branch=master)](https://travis-ci.org/cleber-programmer/rex)
+
 # Rex
 
 > JavaScript é como uma folha em branco – "A liberdade de programar do jeito que faça sentido pra você!"
@@ -5,7 +7,7 @@
 ## Licença
 ### The MIT License (MIT)
 
-Copyright (c) 2016 [cleber.programmer](https://ide.c9.io/cleber-programmer)
+Copyright (c) 2016 [cleber.programmer](https://github.com/cleber-programmer)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
