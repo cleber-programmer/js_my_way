@@ -5,8 +5,7 @@ const uglify = require('gulp-uglify');
 
 gulp.task('build', () => {
   gulp.src(['src/*.js'])
-      .pipe(babel({ presets: ['es2015'] }))
       .pipe(concat('rex.min.js'))
-      .pipe(uglify())
+      .pipe(uglify({ unsafe: true }))
       .pipe(gulp.dest('dist/'));
 });
